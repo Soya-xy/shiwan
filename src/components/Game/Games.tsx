@@ -100,9 +100,9 @@ const Grid = ({ info }: any) => {
             className="g-reflect"
             style={{ background: `url("${IMG_URL + info.img_type}")` }}
           />
-          <div className="g-bg" style={{ background: 'rgb(51, 4, 49)' }} />
+          <div className="g-bg" style={{ background: 'rgb(0, 149, 133)' }} />
           <div className="g-detail">
-            <div className="g-blur" style={{ background: 'rgb(51, 4, 49)' }}>
+            <div className="g-blur" style={{ background: 'rgb(0, 149, 133)' }}>
               <div
                 className="coverimg"
                 style={{ background: `url("${IMG_URL + info.img_type}")` }}
@@ -333,14 +333,14 @@ export const Games = ({ data }: any) => {
         <div className="flex justify-between md:mb-[50px] max-md:ml-[20px] max-md:mt-[50px]">
           <h1 className="text-[30px] font-bold text-[#000] ">All Games</h1>
           <div className="hidden md:flex">
-            <div className="sort relative d-center">
+            {/* <div className="sort relative d-center">
               <span className="mr-2">Sort By:</span>
               <SortBy
                 list={data.setting_data}
                 active={active}
                 setActive={setActive}
               />
-            </div>
+            </div> */}
             <div className="sort relative ml-4 flex items-center">
               <span className="mr-4">View :</span>
               <div className="gap-2 text-2xl text-[#B2B2B2] d-center ">

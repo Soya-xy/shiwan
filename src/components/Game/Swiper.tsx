@@ -20,7 +20,6 @@ export const SwiperTop = ({ banner_list = [] }: any) => {
   }
   return (
     <>
-      <div className=" fixed left-0 top-0 z-0 h-[100vh] w-full">
         <div className="swiper-container">
           <Swiper
             slidesPerView={1}
@@ -72,7 +71,6 @@ export const SwiperTop = ({ banner_list = [] }: any) => {
             </div>
           </div>
         </div>
-      </div>
     </>
   )
 }

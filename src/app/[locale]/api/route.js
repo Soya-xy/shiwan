@@ -30,5 +30,6 @@ export async function GET(e, { params: { locale } }) {
       content: unser(v.content)[locale],
     }
   })
+  console.log("🚀 ~ newDate['game_list']=data.game_list.map ~ newDate['game_list']:", newDate['game_list'])
   return Response.json({ data: newDate })
 }

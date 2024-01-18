@@ -2,10 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import icon_1 from '/public/images/icons/social_icon01.png'
-import icon_2 from '/public/images/icons/social_icon02.png'
-import icon_3 from '/public/images/icons/social_icon03.png'
-import icon_4 from '/public/images/icons/social_icon04.png'
+import icon_1 from '/public/images/BMM@2x.108098f.png'
+import icon_2 from '/public/images/GA@2x.c6a334d.png'
 import logo from '/public/images/logo.png'
 
 const Footer = () => {
@@ -28,16 +26,10 @@ const Footer = () => {
                   </p>
                   <div className="footer-social my-2 flex justify-start">
                     <Link href="#">
-                      <Image src={icon_1} alt="iocn" width={30} height={30} />
+                      <Image src={icon_1} alt="iocn" width={100} height={50} />
                     </Link>
-                    <Link href="#">
-                      <Image src={icon_2} alt="iocn" width={30} height={30} />
-                    </Link>
-                    <Link href="#">
-                      <Image src={icon_3} alt="iocn" width={30} height={30} />
-                    </Link>
-                    <Link href="#">
-                      <Image src={icon_4} alt="iocn" width={30} height={30} />
+                    <Link href="#" className='ml-2'>
+                      <Image src={icon_2} alt="iocn" width={100} height={50} />
                     </Link>
                   </div>
                 </div>
@@ -50,7 +42,7 @@ const Footer = () => {
                     TELEGRAM
                   </h4>
                   <img
-                    className="m-[0_auto]"
+                    className="m-[0_auto] w-40"
                     src="https://gstatic.clewm.net/caoliao-resource/231117/a44fa42f_4b16ec36_1666157560.png"
                     alt=""
                   />
@@ -62,7 +54,7 @@ const Footer = () => {
                     SKYPE
                   </h4>
                   <img
-                    className="m-[0_auto]"
+                    className="m-[0_auto] w-40"
                     src="https://gstatic.clewm.net/caoliao-resource/231117/a44fa42f_4b16ec36_1666157560.png"
                     alt=""
                   />
