@@ -37,9 +37,8 @@ export function Menu() {
   const pathname = usePathname()
 
   const language = [
-    { value: 'en_US', label: 'EN' },
+    { value: 'en', label: 'EN' },
     { value: 'zh_CN', label: '简中' },
-    { value: 'zh_TW', label: '繁中' },
     { value: 'id', label: 'Indonesia' },
     { value: 'ko', label: '한국어' },
     { value: 'ms', label: 'Melayu' },

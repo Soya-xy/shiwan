@@ -1,7 +1,7 @@
 'use client'
 
 import { useQuery } from '@tanstack/react-query'
-import { Fragment, useEffect } from 'react'
+import { Fragment } from 'react'
 
 import { Games, TopNav } from '~/components/Game/Games'
 // import { motion } from 'framer-motion'
@@ -11,12 +11,7 @@ export default function Home() {
   const { isPending, data } = useQuery({
     queryKey: ['repoData'],
     queryFn: () => fetch('/api').then((res) => res.json()),
-    staleTime: 1
-  })
-  useEffect(() => {
-    fetch('/api').then((res) => res.json()).then((data) => {
-      console.log('🚀 ~ Home ~ data:', data)
-    })
+    staleTime: 1,
   })
   return (
     <>

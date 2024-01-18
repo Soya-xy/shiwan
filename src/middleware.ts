@@ -1,4 +1,5 @@
 import createMiddleware from 'next-intl/middleware'
+import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 import {
@@ -15,14 +16,20 @@ const i18nMiddleware = createMiddleware({
   locales,
 
   // Used when no locale matches
-  defaultLocale: 'en_US',
+  defaultLocale: 'en',
 })
 
 export default async function middleware(req: NextRequest) {
+  const { pathname, search } = req.nextUrl
+  console.log('🚀 ~ middleware ~ pathname:', pathname)
+
+  if (pathname.startsWith('/admin')) {
+    return NextResponse.next()
+  }
+
   // i18n
   const response = i18nMiddleware(req)
 
-  const { pathname, search } = req.nextUrl
   let { geo } = req
   const { headers } = req
   let ip = req.ip ?? headers.get('x-real-ip')
