@@ -1,0 +1,427 @@
+'use client'
+
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
+import {
+  ChevronDownIcon,
+  ChevronRightIcon,
+  ChevronUpIcon,
+} from '@radix-ui/react-icons'
+import { Fragment, useEffect, useState } from 'react'
+
+import { useIsMobile } from '~/atoms'
+import { IMG_URL } from '~/constants/env'
+import { useRouter } from '~/i18n'
+
+import { FloatPopover } from '../ui/float-popover'
+
+const SortBy = ({ list, active, setActive }: any) => {
+  const [open, setOpen] = useState(false)
+  return (
+    <DropdownMenu.Root onOpenChange={(e) => setOpen(e)}>
+      <DropdownMenu.Trigger asChild>
+        <button
+          className="flex items-center font-bold"
+          aria-label="Customise options"
+        >
+          {list[active].name} {open ? <ChevronUpIcon /> : <ChevronDownIcon />}
+        </button>
+      </DropdownMenu.Trigger>
+
+      <DropdownMenu.Portal>
+        <DropdownMenu.Content className="DropdownMenuContent" sideOffset={5}>
+          {list.map((item: any, index: number) => {
+            return (
+              <Fragment key={index}>
+                {!item.sub ? (
+                  <DropdownMenu.Item
+                    className={`DropdownMenuItem ${
+                      active === index ? '!text-black' : ''
+                    }`}
+                    onClick={() => setActive(index)}
+                  >
+                    <p>{item.name}</p>
+                  </DropdownMenu.Item>
+                ) : (
+                  <DropdownMenu.Sub>
+                    <DropdownMenu.SubTrigger className="DropdownMenuItem !flex w-full !items-center !justify-between !pl-[20px] !pr-[5px]">
+                      <p>{item.name}</p>
+                      <div className="RightSlot">
+                        <ChevronRightIcon />
+                      </div>
+                    </DropdownMenu.SubTrigger>
+                    <DropdownMenu.Portal>
+                      <DropdownMenu.SubContent
+                        className="DropdownMenuContent"
+                        sideOffset={2}
+                        alignOffset={-5}
+                      >
+                        {item.sub &&
+                          item.sub.map((subItem: any, subIndex: any) => {
+                            return (
+                              <Fragment key={subIndex}>
+                                <DropdownMenu.Item className="DropdownMenuItem">
+                                  <p>{subItem.name}</p>
+                                </DropdownMenu.Item>
+                                {subIndex !== item.sub.length - 1 && (
+                                  <DropdownMenu.Separator className="DropdownMenuSeparator" />
+                                )}
+                              </Fragment>
+                            )
+                          })}
+                      </DropdownMenu.SubContent>
+                    </DropdownMenu.Portal>
+                  </DropdownMenu.Sub>
+                )}
+                {index !== list.length - 1 && (
+                  <DropdownMenu.Separator className="DropdownMenuSeparator" />
+                )}
+              </Fragment>
+            )
+          })}
+        </DropdownMenu.Content>
+      </DropdownMenu.Portal>
+    </DropdownMenu.Root>
+  )
+}
+
+const Grid = ({ info }: any) => {
+  return (
+    <div className="gamebox mb-[15px] basis-[100%] md:basis-[50%] lg:basis-[33%] xl:basis-[25%]">
+      <div className="game-card trynow" style={{ display: 'block' }}>
+        <div className="g-game">
+          <div className="newgame">
+            <img src="/images/tag_new_en@2x.0b1f502.png" />
+          </div>
+          <div
+            className="g-cover"
+            style={{ background: `url("${IMG_URL + info.img_type}")` }}
+          />
+          <div
+            className="g-reflect"
+            style={{ background: `url("${IMG_URL + info.img_type}")` }}
+          />
+          <div className="g-bg" style={{ background: 'rgb(51, 4, 49)' }} />
+          <div className="g-detail">
+            <div className="g-blur" style={{ background: 'rgb(51, 4, 49)' }}>
+              <div
+                className="coverimg"
+                style={{ background: `url("${IMG_URL + info.img_type}")` }}
+              />
+            </div>
+            <div className="detailtop">
+              <div className="d-icon">
+                <div>
+                  <img src="https://public.pg-demo.com/pages/static/image/en/Small_Icon/dragon-hatch2/app_icon_small@3x-82aad7d1.png" />
+                </div>
+              </div>
+              <div className="d-note">
+                <b>{info.name}</b>
+                <span className="description1">{info.content}</span>
+              </div>
+            </div>
+            <div className="detailbottom">
+              <div className="detailrow r1">
+                <div>
+                  <div className="value">MEDIUM</div>
+                  <div className="title">Volatility</div>
+                </div>
+                <div>
+                  <div className="value">96.76%</div>
+                  <div className="title">RTP</div>
+                </div>
+                <div>
+                  <div className="value">x2500</div>
+                  <div className="title">Maximum Win</div>
+                </div>
+              </div>
+              <div className="detailrow r2">
+                <div className="cert">
+                  <div className="image">
+                    <img src="/images/BMM@2x.108098f.png" />
+                    <img src="/images/GA@2x.c6a334d.png" />
+                  </div>
+                  <div className="title">Certification</div>
+                </div>
+                <div className="lang">
+                  <div className="image">
+                    <div>
+                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAMAAACVZWnNAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAADqUExURbi+0N3i7N3n7P///9jY2XZ/rt3i59bV193X10xpcc4QJwAkfc8UK9nZ2f34+NU0SAAbeM0LI9QtQv3z9JemygAge4SVwemOmR47i32PvdpJWtEdM//j5CNAjhk3iNAYL+3w9pKjye/2/OTo8dg9UfW5v+fx+urs842exuiGkQAVdPjZ3eV1grrH39MjOf/q6uh+iuyhqoiaxOFndswCG+6osf/9/cfR5eJufPbR1vrU10tjo/319tUyRvrq7CI5ivT1+D1XnAIjfCk/iqKrwu+xuPPDyN1ZaeqXoU1kpOTk5OTf309mpUZfoEPn2/8AAAAKdFJOU/M2Nv/+Njb+7ACdTPZoAAACE0lEQVRIx9XWa1eqQBQG4KmpNAIdQiAB80JeE000LbOO3bPO//897blgJGAmn3q/uWaexVrj3nsGHe6jjLJFMmj/EB3sPT3qR6shBawdSzJEOtZwgUQ26I9Pezso++4WT4n+O6yT02LjI4uUHMZRvhYz2m9bGaRgmlW+BgM1gPZUVUHKOdO4aZyEeCLWyYmgah6wfRXDEzBQv9G/YHSgAVbVL+4HPBYz6jB6NtAwBmxJlF9zXvFLjMdgnZRatRBleFynvDwMeIvyCOa0azM641sBLyYxvPMdd0ipGtBLQb0FYPJw463y6r9qGMPPJc0JevNAKCYdcu/NKR+pry98seKGsducDuXRSLIEnaN7QBQbkKIxweO6aZptUxw8DmPsvLVh8Vl8FU8AQBRRYTEJ4/gAziXkLsB3STsA5xNyW5ZZyrdJOwBLSZFFEjcAlrfO38WpDizVX5WqSFKVZ9AYPLln2h5vThw+N2l71MehxmAtieaCWhK03nDa/N6SFb768gpdK1n1uRe0JB0G4quXZ9DvdtepFSLDgHN8PSyrlI+9BRsGiwitxo2h1iqf/F8e2CxMEwZgwK9szgWeDSjtXTi11rrR6ws+5Zxh7Yv+NPSNpjh4ygFrgzyj/Ya/yXWz5F2blqegm190ruDsruq1gf7mii26osIyVpRucLkDh9rOfjS2e1a471m0u/2D5gCleUp9ApqQmczf4NMeAAAAAElFTkSuQmCC" />
+                    </div>
+                    <div>
+                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAMAAACVZWnNAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABmUExURdnW1t8hAN8eAP/jAOAmANnZ2eAkANrAvN2IdkxpceQ3AOErAOIxAOVDAPm/AOBIKdunnPOWAP7ZAP/sAOdOAPevAOxoAO9+AOhWAOlaAPanAP3SAPSdAN4ZAOphAPzLAO1yAPKQADBc1dsAAAAKdFJOU/7////////sNgBZVjbfAAABJUlEQVRIx+3W2W6EMAwF0DgJhskGhH2Zhf//ycmIAtV0pBraR/yAENLRxWCE2SWJWXSgWJxcWMKyVL4Vyt8rzQKNsx/XwWiCllnMWPqWh6oZDSmbsWg512oWaJyvKckyWjHaHL6S2wYlEhrfMH/4JRpCywo0FQPn1764XTnHuXvMR4skjLrJp9wLN015N+vS+RJoyWirohBCFKLRcx7cOoXU28bGB+xKvgqkPzA0Qwger3KHXTGvi3svhnU4QClOxtBXlte+5stLH6uW2jOahwbJbb2MqHGDRfKQAC6H0C6ibktFx9++R63LMGWwZzw3bHpncd+HsWFV3Vt5FBvTwVH8emDyMCbXiU984v/HLD1qw8/9w1pBrLBWfFpoSLmvheYvq9QTduktepqfotoAAAAASUVORK5CYII=" />
+                    </div>
+                  </div>
+                  <div className="title">Languages</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="g-button onebutton">
+            {/* You can replace the href value with the actual link */}
+            <a href="/en/games/148/">Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const List = ({ data }: any) => {
+  return (
+    <>
+      <div className="listed-list">
+        <div className="listed-header">
+          <div className="w-[28%]">
+            <div className="pl-[10px] text-left">Game Name</div>
+          </div>
+          <div className="w-[10%]">
+            <div>Volatility</div>
+          </div>
+          <div className="w-[13%]">
+            <div>RTP</div>
+          </div>
+          <div className="w-[19%]">
+            <div>Maximum Win</div>
+          </div>
+          <div className="w-[12%]">
+            <div>Languages</div>
+          </div>
+          <div className="w-[18%]">
+            <div>Certification</div>
+          </div>
+        </div>
+        <div className="listed-content">
+          {data.map((v: any, k: any) => {
+            return (
+              <div className={`listcol ${k % 2 === 0 ? 'even' : ''}`} key={k}>
+                <div className="ripple" />
+                <div className="gamelist normal list1">
+                  <div className="game-cta">
+                    <div className="gamecol game-name w-[28%]">
+                      <div>
+                        <div>
+                          <div className="newgame">
+                            <img src="/img/tag_newlist_en@2x.01602bc.png" />
+                          </div>
+                          <img src={IMG_URL + v.img_type} />
+                        </div>
+                        <span>{v.name}</span>
+                      </div>
+                    </div>
+                    <div className="gamecol volatility w-[10%]">
+                      <div />
+                      <div>
+                        {k % 2 === 0 ? (
+                          <div>
+                            <span
+                              className="en"
+                              style={{
+                                background: '#ff3f4acc',
+                              }}
+                            >
+                              High
+                            </span>
+                            <img src="	/img/Volatility_HighNormal@2x.b19f5ce.png" />
+                          </div>
+                        ) : (
+                          <div>
+                            <span
+                              className="en"
+                              style={{
+                                background: 'rgba(255, 112, 0, 0.8)',
+                              }}
+                            >
+                              Medium
+                            </span>
+                            <img src="/img/Volatility_MediumNormal@2x.f166cdc.png" />
+                          </div>
+                        )}
+                      </div>
+                      <div />
+                    </div>
+                    <div className="gamecol rtp w-[13%]">
+                      <div>
+                        96.76<span className="light">%</span>
+                      </div>
+                    </div>
+                    <div className="gamecol maximum-win w-[19%]">
+                      <div>
+                        <span className="light">x</span>2500
+                      </div>
+                    </div>
+                    <div className="gamecol language w-[12%]">
+                      <FloatPopover
+                        TriggerComponent={() => (
+                          <div className="lang-hover">
+                            <span>2</span>
+                            <span className="arrowdown" />
+                          </div>
+                        )}
+                        wrapperClassName="h-full w-full flex items-center justify-center"
+                        type="tooltip"
+                        placement="bottom-end"
+                        offset={-40}
+                      >
+                        <div className="flex items-center justify-between gap-10">
+                          <div className="text-[12px] d-center">
+                            <img
+                              className="mr-2 h-5 w-5  rounded-full"
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAMAAACVZWnNAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAADqUExURbi+0N3i7N3n7P///9jY2XZ/rt3i59bV193X10xpcc4QJwAkfc8UK9nZ2f34+NU0SAAbeM0LI9QtQv3z9JemygAge4SVwemOmR47i32PvdpJWtEdM//j5CNAjhk3iNAYL+3w9pKjye/2/OTo8dg9UfW5v+fx+urs842exuiGkQAVdPjZ3eV1grrH39MjOf/q6uh+iuyhqoiaxOFndswCG+6osf/9/cfR5eJufPbR1vrU10tjo/319tUyRvrq7CI5ivT1+D1XnAIjfCk/iqKrwu+xuPPDyN1ZaeqXoU1kpOTk5OTf309mpUZfoEPn2/8AAAAKdFJOU/M2Nv/+Njb+7ACdTPZoAAACE0lEQVRIx9XWa1eqQBQG4KmpNAIdQiAB80JeE000LbOO3bPO//897blgJGAmn3q/uWaexVrj3nsGHe6jjLJFMmj/EB3sPT3qR6shBawdSzJEOtZwgUQ26I9Pezso++4WT4n+O6yT02LjI4uUHMZRvhYz2m9bGaRgmlW+BgM1gPZUVUHKOdO4aZyEeCLWyYmgah6wfRXDEzBQv9G/YHSgAVbVL+4HPBYz6jB6NtAwBmxJlF9zXvFLjMdgnZRatRBleFynvDwMeIvyCOa0azM641sBLyYxvPMdd0ipGtBLQb0FYPJw463y6r9qGMPPJc0JevNAKCYdcu/NKR+pry98seKGsducDuXRSLIEnaN7QBQbkKIxweO6aZptUxw8DmPsvLVh8Vl8FU8AQBRRYTEJ4/gAziXkLsB3STsA5xNyW5ZZyrdJOwBLSZFFEjcAlrfO38WpDizVX5WqSFKVZ9AYPLln2h5vThw+N2l71MehxmAtieaCWhK03nDa/N6SFb768gpdK1n1uRe0JB0G4quXZ9DvdtepFSLDgHN8PSyrlI+9BRsGiwitxo2h1iqf/F8e2CxMEwZgwK9szgWeDSjtXTi11rrR6ws+5Zxh7Yv+NPSNpjh4ygFrgzyj/Ya/yXWz5F2blqegm190ruDsruq1gf7mii26osIyVpRucLkDh9rOfjS2e1a471m0u/2D5gCleUp9ApqQmczf4NMeAAAAAElFTkSuQmCC"
+                            />
+                            English
+                          </div>
+                          <div className="text-[12px] d-center">
+                            <img
+                              className="mr-2 h-5  w-5 rounded-full"
+                              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAoCAMAAACVZWnNAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABmUExURdnW1t8hAN8eAP/jAOAmANnZ2eAkANrAvN2IdkxpceQ3AOErAOIxAOVDAPm/AOBIKdunnPOWAP7ZAP/sAOdOAPevAOxoAO9+AOhWAOlaAPanAP3SAPSdAN4ZAOphAPzLAO1yAPKQADBc1dsAAAAKdFJOU/7////////sNgBZVjbfAAABJUlEQVRIx+3W2W6EMAwF0DgJhskGhH2Zhf//ycmIAtV0pBraR/yAENLRxWCE2SWJWXSgWJxcWMKyVL4Vyt8rzQKNsx/XwWiCllnMWPqWh6oZDSmbsWg512oWaJyvKckyWjHaHL6S2wYlEhrfMH/4JRpCywo0FQPn1764XTnHuXvMR4skjLrJp9wLN015N+vS+RJoyWirohBCFKLRcx7cOoXU28bGB+xKvgqkPzA0Qwger3KHXTGvi3svhnU4QClOxtBXlte+5stLH6uW2jOahwbJbb2MqHGDRfKQAC6H0C6ibktFx9++R63LMGWwZzw3bHpncd+HsWFV3Vt5FBvTwVH8emDyMCbXiU984v/HLD1qw8/9w1pBrLBWfFpoSLmvheYvq9QTduktepqfotoAAAAASUVORK5CYII="
+                            />
+                            Chinese
+                          </div>
+                        </div>
+                      </FloatPopover>
+                    </div>
+                    <div className="gamecol certification w-[18%]">
+                      <div>
+                        <img src="/img/bmm.9f6a044.svg" />
+                      </div>
+                      <div>
+                        <img src="/img/ga.ea45977.svg" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="clear-row" />
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </>
+  )
+}
+
+export const Games = ({ data }: any) => {
+  const router = useRouter()
+  const [active, setActive] = useState(0)
+  const [tab, setTab] = useState('grid')
+  const [nowIndex, setNowIndex] = useState(1)
+  const [gameList, setGameList] = useState<any[]>([])
+
+  function setData() {
+    const dataList: any = [gameList]
+    data.game_list.forEach((v: any) => {
+      if (
+        data.setting_data[active].id === v.game_type &&
+        dataList.length <= nowIndex * 10
+      ) {
+        dataList.push(v)
+      }
+    })
+    setGameList(dataList)
+  }
+  useEffect(() => {
+    setData()
+  }, [nowIndex])
+
+  useEffect(() => {
+    setNowIndex(1)
+    setData()
+  }, [active])
+  return (
+    <>
+      <div className="allgame">
+        <div className="flex justify-between md:mb-[50px] max-md:ml-[20px] max-md:mt-[50px]">
+          <h1 className="text-[30px] font-bold text-[#000] ">All Games</h1>
+          <div className="hidden md:flex">
+            <div className="sort relative d-center">
+              <span className="mr-2">Sort By:</span>
+              <SortBy
+                list={data.setting_data}
+                active={active}
+                setActive={setActive}
+              />
+            </div>
+            <div className="sort relative ml-4 flex items-center">
+              <span className="mr-4">View :</span>
+              <div className="gap-2 text-2xl text-[#B2B2B2] d-center ">
+                <i
+                  className={` icon-[mingcute--grid-fill] cursor-pointer ${
+                    tab === 'grid' ? 'text-[#000]' : ''
+                  } hover:text-[#000]`}
+                  onClick={() => setTab('grid')}
+                />
+                <i
+                  className={` icon-[mingcute--list-check-3-fill] cursor-pointer hover:text-[#000] ${
+                    tab === 'list' ? 'text-[#000]' : ''
+                  }`}
+                  onClick={() => setTab('list')}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="space-p-2 flex flex-wrap">
+          {tab === 'grid' &&
+            gameList.map((v: any, k: number) => {
+              return (
+                data.setting_data[active].id === v.game_type && (
+                  <Grid info={v} key={k} />
+                )
+              )
+            })}
+          {tab === 'list' && <List data={gameList} />}
+        </div>
+      </div>
+      <div className="barcover">
+        <div
+          className="loadmore  !d-center"
+          onClick={() => setNowIndex(nowIndex + 1)}
+        >
+          <div className="loadtext">Load More</div>
+          <div className="loadarrow !d-center">
+            <i className="icon-[mingcute--add-fill]" />
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export const TopNav = () => {
+  const isMobile = useIsMobile()
+  return (
+    <>
+      <div className={isMobile ? 'top-nav' : 'top-nav !hidden'}>
+        <div className="top-nav-holder w-full">
+          <div className="menubox active">
+            <div>
+              <div className="s_icon">
+                <img src="/img/Icon20_AllGame.a302cd6.svg" />
+              </div>
+              <div>ALL GAMES</div>
+            </div>
+          </div>
+          <div className="menubox">
+            <div>
+              <div className="s_icon">
+                <img src="/img/Icon20_TimeLinePage.5d075c0.svg" />
+              </div>
+              <div>TIMELINE</div>
+            </div>
+          </div>
+          <div className="menubox">
+            <div>
+              <div className="s_icon">
+                <img src="/img/Icon20_Search.21bc271.svg" />
+              </div>
+              <div>SEARCH</div>
+            </div>
+          </div>
+          <div id="top-nav-space" className="top-nav-space">
+            <div style={{ left: '0%' }} />
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
