@@ -51,7 +51,7 @@ const FormDisabledDemo = () => {
   const { id } = useParams()
 
   const { isPending, isSuccess, data } = useQuery({
-    queryKey: ['editRepoData'],
+    queryKey: ['bannerEditRepoData'],
     queryFn: () =>
       fetch(`/admin/banner/api?id=${id}`).then((res) => res.json()),
     staleTime: 1,

@@ -4,7 +4,33 @@
   position: relative;
   overflow: hidden;
   z-index: 0;
+  --swiper-pagination-bottom: 20px;
+  --swiper-pagination-bullet-inactive-color: #dcdcdc;
 }
+
+.swiper-pagination-bullet-active {
+  margin: 5px;
+  position: relative;
+  --swiper-pagination-bullet-size: 10px;
+  --swiper-pagination-color: #fff;
+}
+.swiper-pagination-bullet-active::after{
+  content: '';
+  position: absolute;
+  border: 1px solid #fff;
+  display: block;
+  width: 18px;
+  height: 18px;
+  top: -40%;
+  left: -40%;
+  border-radius: 100%;
+}
+@media (min-width: 768px) {
+  .swiper-pagination{
+    display: none;
+  }
+}
+
 
 .swiper-slides {
   height: 576px;
@@ -762,13 +788,13 @@
 }
 
 .space-p-2 .gamebox:nth-child(4n+2) {
-  padding: 0 10px;
+  margin: 0 1.05rem;
 }
 
- .space-p-2 .gamebox:nth-child(4n+3) {
-  padding-right: 10px;
-  padding-left: 0px;
-} 
+.space-p-2 .gamebox:nth-child(4n+3) {
+  margin-right: 1.05rem;
+  margin-left: 0px;
+}
 
 .barcover {
   line-height: 0;
@@ -874,7 +900,6 @@
 
   .boxed-list .gamebox {
     margin: 0 0 20px
-    
   }
 
   .listed-list>.listed-header {
@@ -990,374 +1015,572 @@
 .allgame.one-col>.listed-list {
   padding: 0 25px
 }
+
 .clear-row {
-  overflow:hidden;
-  float:none
+  overflow: hidden;
+  float: none
 }
-.clear-row, .gamelist {
-  display:block;
-  width:100%
-}
+
+.clear-row,
 .gamelist {
-  position:relative;
-  color:#000
+  display: block;
+  width: 100%
 }
+
+.gamelist {
+  position: relative;
+  color: #000
+}
+
 .gamelist>.game-cta:hover {
-  cursor:pointer
+  cursor: pointer
 }
+
 .gamelist .gamecol {
-  float:left;
-  height:120px;
-  position:relative;
-  box-sizing:border-box;
-  display:flex;
-  align-items:center;
-  justify-content:center
+  float: left;
+  height: 120px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
+
 .gamelist .gamecol.game-name>div {
-  width:100%;
-  padding:0 0 0 10px
+  width: 100%;
+  padding: 0 0 0 10px
 }
+
 .gamelist .gamecol.game-name>div>div {
-  position:relative;
-  height:120px;
-  display:flex;
-  align-items:center;
-  float:left
+  position: relative;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  float: left
 }
+
 .gamelist .gamecol.game-name>div>div>.newgame {
-  display:block;
-  position:absolute;
-  top:24px;
-  right:-6px;
-  z-index:1
+  display: block;
+  position: absolute;
+  top: 24px;
+  right: -6px;
+  z-index: 1
 }
+
 .gamelist .gamecol.game-name>div>div>.newgame img {
-  display:block;
-  height:20px
+  display: block;
+  height: 20px
 }
+
 .gamelist .gamecol.game-name>div>div>img {
-  display:block;
-  width:60px;
-  float:left
+  display: block;
+  width: 60px;
+  float: left
 }
+
 .gamelist .gamecol.game-name>div>div>.view {
-  display:none;
-  border:1px solid #ddd;
-  border-radius:2px;
-  overflow:hidden;
-  width:50px;
-  text-align:center;
-  margin:14px 10px 0;
-  padding:2px;
-  color:#000;
-  float:left;
-  bacground:#fff
+  display: none;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  overflow: hidden;
+  width: 50px;
+  text-align: center;
+  margin: 14px 10px 0;
+  padding: 2px;
+  color: #000;
+  float: left;
+  bacground: #fff
 }
+
 .gamelist .gamecol.game-name>div>div>.view:hover {
-  background:#eee
+  background: #eee
 }
+
 .gamelist .gamecol.game-name>div>span {
-  display:block;
-  height:120px;
-  float:right;
-  width:calc(100% - 80px);
-  font-size:16px;
-  letter-spacing:0;
-  line-height:20px;
-  display:flex;
-  align-items:center;
-  padding-right:10px
+  display: block;
+  height: 120px;
+  float: right;
+  width: calc(100% - 80px);
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  padding-right: 10px
 }
+
 .gamelist .gamecol.volatility>div>div {
-  display:flex;
-  position:relative;
-  align-items:center;
-  justify-content:center;
-  padding:5px 0
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 0
 }
+
 .gamelist .gamecol.volatility>div img {
-  width:auto;
-  height:20px
+  width: auto;
+  height: 20px
 }
+
 .gamelist .gamecol.volatility>div span {
-  display:block;
-  position:absolute;
-  font-size:12px;
-  letter-spacing:0;
-  text-shadow:0 1px 2px rgba(0, 0, 0, .2);
-  width:100%;
-  height:20px;
-  line-height:20px;
-  top:calc(50% - 10px);
-  left:0;
-  z-index:1;
-  text-transform:uppercase;
-  font-weight:700;
-  color:#fff;
-  padding:0 4px;
-  box-sizing:border-box;
-  border-radius:6px;
-  transition:all .3s ease;
-  opacity:0
+  display: block;
+  position: absolute;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  top: calc(50% - 10px);
+  left: 0;
+  z-index: 1;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  padding: 0 4px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  transition: all .3s ease;
+  opacity: 0
 }
+
 .gamelist .gamecol.volatility>div span.en {
-  font-family:Kanit-Medium
+  font-family: Kanit-Medium
 }
-.gamelist .gamecol.volatility>div span.cn, .gamelist .gamecol.volatility>div span.cn-t {
-  font-family:PingFang SC
+
+.gamelist .gamecol.volatility>div span.cn,
+.gamelist .gamecol.volatility>div span.cn-t {
+  font-family: PingFang SC
 }
+
 .gamelist .gamecol.volatility>div span.th {
-  font-family:Kanit
+  font-family: Kanit
 }
+
 .gamelist .gamecol.volatility>div:hover {
-  cursor:pointer
+  cursor: pointer
 }
+
 .gamelist .gamecol.volatility>div:hover span {
-  opacity:1
+  opacity: 1
 }
-.gamelist .gamecol.maximum-win, .gamelist .gamecol.rtp {
-  font-size:18px;
-  font-family:Kanit-Medium
+
+.gamelist .gamecol.maximum-win,
+.gamelist .gamecol.rtp {
+  font-size: 18px;
+  font-family: Kanit-Medium
 }
+
 .gamelist .gamecol .light {
-  opacity:.4;
-  font-size:16px;
-  display:inline-block;
-  margin:0 2px
+  opacity: .4;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0 2px
 }
+
 .gamelist .gamecol .multi {
-  font-size:16px;
-  line-height:23px;
-  opacity:1;
-  display:block;
-  text-align:left
+  font-size: 16px;
+  line-height: 23px;
+  opacity: 1;
+  display: block;
+  text-align: left
 }
+
 .gamelist .gamecol.language {
-  font-size:18px;
-  font-family:Kanit-Medium
+  font-size: 18px;
+  font-family: Kanit-Medium
 }
+
 .gamelist .gamecol.language>.lang-hover {
-  display:inline-block;
-  position:relative;
-  cursor:pointer;
-  padding:12px 8px
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding: 12px 8px
 }
+
 .gamelist .gamecol.language>.lang-hover.active>.lang-data {
-  opacity:1;
-  visibility:visible
+  opacity: 1;
+  visibility: visible
 }
+
 .gamelist .gamecol.language>.lang-hover.active.up>.lang-data {
-  bottom:30px;
-  top:none
+  bottom: 30px;
+  top: none
 }
+
 .gamelist .gamecol.language>.lang-hover.active.down>.lang-data {
-  top:32px;
-  bottom:none
+  top: 32px;
+  bottom: none
 }
+
 .gamelist .gamecol.language>.lang-hover>.lang-data {
-  display:block;
-  position:absolute;
-  right:-20px;
-  max-width:400px;
-  box-sizing:border-box;
-  padding:20px;
-  background:#fff;
-  box-shadow:0 0 10px 0 rgba(0, 0, 0, .1);
-  border-radius:5px;
-  overflow:hidden;
-  bottom:none;
-  top:none;
-  opacity:0;
-  visibility:hidden;
-  z-index:99
+  display: block;
+  position: absolute;
+  right: -20px;
+  max-width: 400px;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
+  border-radius: 5px;
+  overflow: hidden;
+  bottom: none;
+  top: none;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 99
 }
+
 .gamelist .gamecol.language>.lang-hover>.lang-data div {
-  display:block;
-  float:left;
-  width:120px;
-  padding:10px;
-  box-sizing:border-box;
-  background:transparent;
-  border-radius:5px;
-  height:40px
+  display: block;
+  float: left;
+  width: 120px;
+  padding: 10px;
+  box-sizing: border-box;
+  background: transparent;
+  border-radius: 5px;
+  height: 40px
 }
+
 .gamelist .gamecol.language>.lang-hover>.lang-data div img {
-  display:block;
-  width:20px;
-  height:20px;
-  float:left
+  display: block;
+  width: 20px;
+  height: 20px;
+  float: left
 }
+
 .gamelist .gamecol.language>.lang-hover>.lang-data div p {
-  display:block;
-  width:calc(100% - 34px);
-  float:right;
-  font-size:12px;
-  color:#000;
-  letter-spacing:0;
-  opacity:.7;
-  line-height:20px;
-  text-align:left
+  display: block;
+  width: calc(100% - 34px);
+  float: right;
+  font-size: 12px;
+  color: #000;
+  letter-spacing: 0;
+  opacity: .7;
+  line-height: 20px;
+  text-align: left
 }
+
 .gamelist .gamecol.certification div {
-  display:inline-block;
-  height:20px
+  display: inline-block;
+  height: 20px
 }
+
 .gamelist .gamecol.certification div:first-child {
-  margin:0 12px 0 0
+  margin: 0 12px 0 0
 }
+
 .gamelist .gamecol.certification div img {
-  height:100%
+  height: 100%
 }
+
 .gamelist>.gamecol2 {
-  display:none
+  display: none
 }
+
 .gamelist .arrowdown {
-  display:inline-block;
-  border-left:3px solid transparent;
-  border-right:3px solid transparent;
-  border-top:5px solid #000;
-  margin:0 0 2px 4px;
-  opacity:.4
+  display: inline-block;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 5px solid #000;
+  margin: 0 0 2px 4px;
+  opacity: .4
 }
+
 @media screen and (max-width:991px) {
   .gamelist .gamecol.game-name>div>div>img {
-      width:50px
+    width: 50px
   }
+
   .gamelist .gamecol.game-name>div>span {
-      width:calc(100% - 62px);
-      font-size:13px;
-      line-height:18px
+    width: calc(100% - 62px);
+    font-size: 13px;
+    line-height: 18px
   }
+
   .gamelist .gamecol.volatility>div img {
-      height:17px
+    height: 17px
   }
-  .gamelist .gamecol.maximum-win, .gamelist .gamecol.rtp {
-      font-size:16px
+
+  .gamelist .gamecol.maximum-win,
+  .gamelist .gamecol.rtp {
+    font-size: 16px
   }
+
   .gamelist .gamecol .light {
-      font-size:13px!important
+    font-size: 13px !important
   }
+
   .gamelist .gamecol .multi {
-      font-size:13px;
-      line-height:18px;
-      width:80%;
-      margin:0 auto
+    font-size: 13px;
+    line-height: 18px;
+    width: 80%;
+    margin: 0 auto
   }
+
   .gamelist .gamecol.language {
-      font-size:16px
+    font-size: 16px
   }
+
   .gamelist .gamecol.certification div {
-      height:17px
+    height: 17px
   }
+
   .gamelist .gamecol.certification div:first-child {
-      margin:0 6px 0 0
+    margin: 0 6px 0 0
   }
 }
+
 @media screen and (max-width:767px) {
   .gamelist {
-      padding:21px 0 18px
+    padding: 21px 0 18px
   }
+
   .gamelist .gamecol {
-      display:none
+    display: none
   }
+
   .gamelist .gamecol.game-name {
-      display:flex;
-      height:120px;
-      width:90px!important
+    display: flex;
+    height: 120px;
+    width: 90px !important
   }
+
   .gamelist .gamecol.game-name>div {
-      padding:0
+    padding: 0
   }
+
   .gamelist .gamecol.game-name>div>div {
-      display:block
+    display: block
   }
+
   .gamelist .gamecol.game-name>div>div>.newgame {
-      top:-7px;
-      right:10px
+    top: -7px;
+    right: 10px
   }
+
   .gamelist .gamecol.game-name>div>div>.newgame img {
-      height:17px
+    height: 17px
   }
+
   .gamelist .gamecol.game-name>div>div>img {
-      width:70px
+    width: 70px
   }
+
   .gamelist .gamecol.game-name>div>div>.view {
-      display:block
+    display: block
   }
+
   .gamelist .gamecol.game-name>div>span {
-      display:none
+    display: none
   }
+
   .gamelist>.gamecol2 {
-      display:block;
-      height:120px;
-      margin-left:90px
+    display: block;
+    height: 120px;
+    margin-left: 90px
   }
+
   .gamelist>.gamecol2>div {
-      float:left;
-      width:35%;
-      height:40px;
-      color:#000
+    float: left;
+    width: 35%;
+    height: 40px;
+    color: #000
   }
+
   .gamelist>.gamecol2>div>div {
-      overflow:hidden;
-      font-size:12px!important;
-      color:#000;
-      height:16px
+    overflow: hidden;
+    font-size: 12px !important;
+    color: #000;
+    height: 16px
   }
+
   .gamelist>.gamecol2>div>div:first-child {
-      font-weight:700
+    font-weight: 700
   }
+
   .gamelist>.gamecol2>div>div:nth-child(2) {
-      opacity:.5
+    opacity: .5
   }
+
   .gamelist>.gamecol2>div>div>.cert {
-      float:left;
-      margin-right:3px
+    float: left;
+    margin-right: 3px
   }
+
   .gamelist>.gamecol2>div>div>.cert img {
-      height:13px
+    height: 13px
   }
+
   .gamelist>.gamecol2>div.game-name {
-      width:100%;
-      line-height:21px;
-      font-size:17px;
-      height:auto;
-      min-height:40px;
-      font-weight:700;
-      padding-bottom:10px
+    width: 100%;
+    line-height: 21px;
+    font-size: 17px;
+    height: auto;
+    min-height: 40px;
+    font-weight: 700;
+    padding-bottom: 10px
   }
-  .gamelist>.gamecol2>div:nth-child(2), .gamelist>.gamecol2>div:nth-child(5) {
-      width:41%
+
+  .gamelist>.gamecol2>div:nth-child(2),
+  .gamelist>.gamecol2>div:nth-child(5) {
+    width: 41%
   }
+
   .gamelist>.gamecol2>div:nth-child(3) {
-      width:34%
+    width: 34%
   }
+
   .gamelist>.gamecol2>div:nth-child(4) {
-      width:25%
+    width: 25%
   }
+
   .gamelist>.gamecol2>div:nth-child(4):hover {
-      cursor:pointer
+    cursor: pointer
   }
+
   .gamelist>.gamecol2>div:nth-child(6) {
-      width:50%
+    width: 50%
   }
+
   .gamelist>.gamecol2 .light {
-      opacity:.4;
-      font-size:12px!important;
-      display:inline-block;
-      margin:0 2px
+    opacity: .4;
+    font-size: 12px !important;
+    display: inline-block;
+    margin: 0 2px
   }
+
   .gamelist>.gamecol2 .multi {
-      font-size:12px;
-      padding-left:0!important
+    font-size: 12px;
+    padding-left: 0 !important
   }
 }
+
 @media screen and (max-width:575px) {
   .gamelist .gamecol.game-name {
-      width:85px!important
+    width: 85px !important
   }
+
   .gamelist>.gamecol2 {
-      margin-left:85px
+    margin-left: 85px
+  }
+}
+
+
+.game-mainpage>.game-bottom-bar {
+  display: flex;
+  position: fixed;
+  width: 500px;
+  bottom: -100px;
+  left: calc(50% - 250px);
+  background: #fff;
+  z-index: 101;
+  box-shadow: 0 6px 20px 0 rgba(0,0,0,.2);
+  border-radius: 8px;
+  transition: all .5s ease
+}
+
+.game-mainpage>.game-bottom-bar.active,.game-mainpage>.game-bottom-bar.bactive {
+  bottom: 25px!important
+}
+
+.game-mainpage>.game-bottom-bar>.menubox {
+  position: relative;
+  float: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  opacity: .5
+}
+
+.game-mainpage>.game-bottom-bar>.menubox.active {
+  opacity: 1!important
+}
+
+.game-mainpage>.game-bottom-bar>.menubox>span {
+  display: block;
+  position: absolute;
+  height: 24px;
+  width: 1px;
+  left: 0;
+  top: calc(50% - 12px);
+  background: rgba(0,0,0,.1)
+}
+
+.game-mainpage>.game-bottom-bar>.menubox>div {
+  font-size: 16px;
+  color: #000;
+  opacity: .8;
+  padding: 17px 0
+}
+
+.game-mainpage>.game-bottom-bar>.menubox>div>.s_icon {
+  display: block;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  font-weight: 700
+}
+
+.game-mainpage>.game-bottom-bar>.menubox.active>div {
+  opacity: .8
+}
+
+.game-mainpage>.game-bottom-bar>.menubox:hover>div {
+  opacity: .8;
+  cursor: pointer
+}
+
+
+@media screen and (max-width: 575px) {
+  .game-mainpage>.game-bottom-bar {
+      width:350px;
+      left: calc(50% - 175px)
+  }
+
+  .game-mainpage>.game-bottom-bar>.menubox>div>.s_icon {
+      height: 18px
+  }
+
+  .game-mainpage>.game-bottom-bar>.menubox>div>.s_icon img {
+      height: 100%
+  }
+
+  .game-mainpage>.main-lister>.lister-cover>.lister-scroll .game-nav>.lister-sidemenu>.menu-cta {
+      display: block
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .game-mainpage>.game-bottom-bar {
+      width:300px;
+      left: calc(50% - 150px)
+  }
+
+  .game-mainpage>.main-lister>.lister-cover>.lister-scroll .top-nav>.top-nav-holder>.menubox>div>div {
+      padding: 0
+  }
+}
+
+@keyframes rotateAnime {
+  0% {
+      transform: rotate(0)
+  }
+
+  to {
+      transform: rotate(1turn)
+  }
+}
+
+@-webkit-keyframes rotateAnime {
+  0% {
+      transform: rotate(0)
+  }
+
+  to {
+      transform: rotate(1turn)
   }
 }

@@ -9,6 +9,17 @@ import { useParams } from 'next/navigation'
 import { useAudioPlayer } from '~/hooks/shared/use-audio'
 import { usePathname, useRouter } from '~/i18n'
 
+export const language = [
+  { value: 'en', label: 'EN' },
+  { value: 'zh', label: '简中' },
+  { value: 'id', label: 'Indonesia' },
+  { value: 'ko', label: '한국어' },
+  { value: 'ms', label: 'Melayu' },
+  { value: 'vi', label: 'Tiếng Việt' },
+  { value: 'ja', label: '日本語' },
+  { value: 'ru', label: 'РУССКИЙ' },
+]
+
 const SelectItem = forwardRef(
   ({ children, className, ...props }: any, forwardedRef) => {
     return (
@@ -36,17 +47,6 @@ export function Menu() {
   const param = useParams()
   const pathname = usePathname()
 
-  const language = [
-    { value: 'en', label: 'EN' },
-    { value: 'zh', label: '简中' },
-    { value: 'id', label: 'Indonesia' },
-    { value: 'ko', label: '한국어' },
-    { value: 'ms', label: 'Melayu' },
-    { value: 'vi', label: 'Tiếng Việt' },
-    { value: 'ja', label: '日本語' },
-    { value: 'ru', label: 'РУССКИЙ' },
-  ]
-
   useEffect(() => {
     if (isOpen && containerRef) {
       play()
@@ -61,6 +61,7 @@ export function Menu() {
       <Select.Root
         defaultValue={param.locale as string}
         onValueChange={(e) => {
+          console.log('🚀 ~ Menu ~ e:', pathname, e)
           router.push(pathname, { locale: e })
         }}
         onOpenChange={(e) => {

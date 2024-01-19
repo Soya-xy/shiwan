@@ -128,41 +128,41 @@
   height: 100%
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown {
+.touch-dropdown {
   display: block;
   float: left;
   padding: 22px 0
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown {
+.touch-dropdown .dropdown {
   height: 35px;
   color: #000;
   display: block
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div {
+.touch-dropdown .dropdown>div {
   overflow: hidden;
   font-size: 13px;
   font-weight: 700;
   user-select: none
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.dropdown-main {
+.touch-dropdown .dropdown>div>.dropdown-main {
   background: #f8f8f8;
   padding: 5px 5px 5px 10px;
   overflow: hidden;
   border-radius: 3px
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.dropdown-main:hover {
+.touch-dropdown .dropdown>div>.dropdown-main:hover {
   cursor: pointer
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.dropdown-main:hover div div {
+.touch-dropdown .dropdown>div>.dropdown-main:hover div div {
   opacity: .2
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.dropdown-main>div {
+.touch-dropdown .dropdown>div>.dropdown-main>div {
   width: 15px;
   height: 15px;
   background: #fff;
@@ -171,7 +171,7 @@
   border-radius: 3px
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.dropdown-main>div>div {
+.touch-dropdown .dropdown>div>.dropdown-main>div>div {
   width: 0;
   height: 0;
   border-left: 4px solid transparent;
@@ -180,8 +180,9 @@
   margin: 6px 0 0 3px
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.options {
+.touch-dropdown .dropdown>div>.options {
   position: absolute;
+  z-index: 6;
   border-radius: 6px;
   margin: 10px 0 0;
   height: 0;
@@ -193,38 +194,38 @@
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, .1)
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.options.active {
+.touch-dropdown .dropdown>div>.options.active {
   height: auto;
   opacity: 1
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.options>div {
+.touch-dropdown .dropdown>div>.options>div {
   clear: both;
   float: left;
   text-align: right;
   width: 100%
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.options>div:hover {
+.touch-dropdown .dropdown>div>.options>div:hover {
   cursor: pointer
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.options>div:hover a {
+.touch-dropdown .dropdown>div>.options>div:hover a {
   color: #ff2d55;
   font-weight: 700
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.options>div.disable {
+.touch-dropdown .dropdown>div>.options>div.disable {
   cursor: default;
   pointer-events: none
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.options>div.disable a {
+.touch-dropdown .dropdown>div>.options>div.disable a {
   color: #333;
   font-weight: 700
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.options>div>a {
+.touch-dropdown .dropdown>div>.options>div>a {
   display: block;
   width: 100%;
   padding: 14px 18px;
@@ -235,7 +236,7 @@
   transition: color .5s
 }
 
-.top-navigator>.scroll-navi>.touch-dropdown .dropdown>div>.options>div>div {
+.touch-dropdown .dropdown>div>.options>div>div {
   width: 100px;
   height: 1px;
   width: 80px;
@@ -2251,6 +2252,7 @@
   .top-nav {
     position: absolute;
     /* margin-top: -100px; */
+    z-index: 1;
     left: 0;
     box-shadow: none
   }

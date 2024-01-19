@@ -7,11 +7,13 @@ import {
   ChevronUpIcon,
 } from '@radix-ui/react-icons'
 import { Fragment, useState } from 'react'
+import { useParams } from 'next/navigation'
 
 import { useIsMobile } from '~/atoms'
 import { IMG_URL } from '~/constants/env'
-import { useRouter } from '~/i18n'
+import { usePathname, useRouter } from '~/i18n'
 
+import { language } from '../Header/Navbar/Menu'
 import { FloatPopover } from '../ui/float-popover'
 
 const SortBy = ({ list, active, setActive }: any) => {
@@ -86,12 +88,14 @@ const SortBy = ({ list, active, setActive }: any) => {
 
 const Grid = ({ info }: any) => {
   return (
-    <div className="gamebox mb-[15px] basis-[100%] md:basis-[50%] lg:basis-[33%] xl:basis-[25%]">
+    <div className="gamebox !mx-auto !mb-[20px] basis-[308px]">
       <div className="game-card trynow" style={{ display: 'block' }}>
         <div className="g-game">
-          <div className="newgame">
-            <img src="/images/tag_new_en@2x.0b1f502.png" />
-          </div>
+          {info.isNew && (
+            <div className="newgame">
+              <img src="/images/tag_new_en@2x.0b1f502.png" />
+            </div>
+          )}
           <div
             className="g-cover"
             style={{ background: `url("${IMG_URL + info.imgUrl}")` }}
@@ -105,13 +109,13 @@ const Grid = ({ info }: any) => {
             <div className="g-blur" style={{ background: info.color }}>
               <div
                 className="coverimg"
-                style={{ background: `url("${IMG_URL + info.img_type}")` }}
+                style={{ background: `url("${IMG_URL + info.imgUrl}")` }}
               />
             </div>
             <div className="detailtop">
               <div className="d-icon">
                 <div>
-                  <img src={info.icon} />
+                  <img src={IMG_URL + info.icon} />
                 </div>
               </div>
               <div className="d-note">
@@ -203,7 +207,7 @@ const List = ({ data }: any) => {
                           <div className="newgame">
                             <img src="/img/tag_newlist_en@2x.01602bc.png" />
                           </div>
-                          <img src={v.icon} />
+                          <img src={IMG_URL + v.icon} />
                         </div>
                         <span>{v.name}</span>
                       </div>
@@ -303,37 +307,71 @@ const List = ({ data }: any) => {
 }
 
 export const Games = ({ data }: any) => {
-  const router = useRouter()
-  const [active, setActive] = useState(0)
   const [tab, setTab] = useState('grid')
   const [nowIndex, setNowIndex] = useState(1)
-  const [gameList, setGameList] = useState<any[]>([])
 
-  // function setData() {
-  //   const dataList: any = [gameList]
-  //   data.game_list.forEach((v: any) => {
-  //     if (
-  //       data.setting_data[active].id === v.game_type &&
-  //       dataList.length <= nowIndex * 10
-  //     ) {
-  //       dataList.push(v)
-  //     }
-  //   })
-  //   setGameList(dataList)
-  // }
-  // useEffect(() => {
-  //   setData()
-  // }, [nowIndex])
-
-  // useEffect(() => {
-  //   setNowIndex(1)
-  //   setData()
-  // }, [active])
+  const [open, setOpen] = useState(false)
+  const [active, setActive] = useState(0)
+  const pathname = usePathname()
+  const router = useRouter()
+  const param = useParams()
   return (
     <>
       <div className="allgame">
-        <div className="flex justify-between md:mb-[50px] max-md:ml-[20px] max-md:mt-[50px]">
-          <h1 className="text-[30px] font-bold text-[#000] ">All Games</h1>
+        <div className="mb-5 flex justify-between max-md:ml-[20px] max-md:mt-[50px]">
+          <h1 className="my-4 text-[30px] font-bold text-[#000]">ALL Games</h1>
+          <div className="touch-dropdown mr-4 md:hidden">
+            <div className="dropdown">
+              <div>
+                <div
+                  className="dropdown-main"
+                  onClick={() => {
+                    setOpen(!open)
+                  }}
+                >
+                  {param.locale}
+                  <div>
+                    <div />
+                  </div>
+                </div>
+                {open && (
+                  <div
+                    className="DialogOverlay"
+                    onClick={() => setOpen(false)}
+                  />
+                )}
+                <div
+                  className={`options ${
+                    open ? 'right-[20px] !h-auto !opacity-[1]' : ''
+                  }`}
+                >
+                  {language.map((v: any, k: number) => {
+                    return (
+                      <div
+                        key={k}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          setActive(k)
+                          router.replace(pathname, { locale: v.value })
+                        }}
+                      >
+                        <a
+                          href=""
+                          className={
+                            v.value === param.locale
+                              ? '!font-bold !text-[#ff2d55]'
+                              : ''
+                          }
+                        >
+                          {v.label}
+                        </a>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
           <div className="hidden md:flex">
             {/* <div className="sort relative d-center">
               <span className="mr-2">Sort By:</span>
@@ -362,7 +400,7 @@ export const Games = ({ data }: any) => {
             </div>
           </div>
         </div>
-        <div className="space-p-2 flex flex-wrap">
+        <div className="space-p-2 flex flex-wrap justify-between">
           {tab === 'grid' &&
             data.map((v: any, k: number) => {
               return <Grid info={v} key={k} />
@@ -370,23 +408,26 @@ export const Games = ({ data }: any) => {
           {tab === 'list' && <List data={data} />}
         </div>
       </div>
-      <div className="barcover">
-        <div
-          className="loadmore  !d-center"
-          onClick={() => setNowIndex(nowIndex + 1)}
-        >
-          <div className="loadtext">Load More</div>
-          <div className="loadarrow !d-center">
-            <i className="icon-[mingcute--add-fill]" />
+      {data.length > 20 && (
+        <div className="barcover">
+          <div
+            className="loadmore  !d-center"
+            onClick={() => setNowIndex(nowIndex + 1)}
+          >
+            <div className="loadtext">Load More</div>
+            <div className="loadarrow !d-center">
+              <i className="icon-[mingcute--add-fill]" />
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   )
 }
 
 export const TopNav = () => {
   const isMobile = useIsMobile()
+
   return (
     <>
       <div className={isMobile ? 'top-nav' : 'top-nav !hidden'}>

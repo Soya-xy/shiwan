@@ -10,7 +10,7 @@ const Home: React.FC = () => {
 
   const router = useRouter()
   const { data, refetch } = useQuery({
-    queryKey: ['repoData'],
+    queryKey: ['bannerData'],
     queryFn: () => fetch('/admin/banner/api').then((res) => res.json()),
     staleTime: 1,
   })
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
             ]}
           >
             <List.Item.Meta
-              className="w-[30%] !basis-auto"
+              className="w-full !basis-auto"
               avatar={<Avatar src={item.icon} />}
               title={<p className="text-xl">{item.name}</p>}
               description={

@@ -14,17 +14,17 @@ const Footer = () => {
           <div className="flex w-full flex-col md:flex-row">
             <div className="">
               <div className="footer-widget">
-                <div className="footer-logo logo text-center md:text-start">
+                <div className="footer-logo logo text-center md:text-start max-md:my-4 max-md:flex max-md:justify-center">
                   <Link href="#">
                     <Image src={logo} alt="Logo" width={177} height={40} />
                   </Link>
                 </div>
                 <div className="footer-text">
-                  <p className="desc my-4 text-[#bcbcbc]">
+                  <p className="desc my-4 text-[#bcbcbc] max-md:px-4">
                     PG电子(Pocket Games Soft
                     )全球首屈一指的电子游戏供货商，首位跨足线下线上电子游戏开发。拥有亚洲最大娱乐城esball独家授权，首开全球先锋：「整合线下到线上电子游戏」多款游戏屡屡创下市场傲人佳绩，吸引各方玩家一指上瘾，豪掷千金，已成为全球首屈一指的电子游戏品牌！
                   </p>
-                  <div className="footer-social my-2 flex justify-start">
+                  <div className="footer-social my-2 flex justify-start  max-md:my-4 max-md:flex max-md:justify-center">
                     <Link href="#">
                       <Image src={icon_1} alt="iocn" width={100} height={50} />
                     </Link>
@@ -35,7 +35,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="flex w-full justify-end gap-3">
+            <div className="flex w-full justify-end gap-3 max-md:justify-center">
               <div className="ml-[1%]">
                 <div className="footer-widget widget_nav_menu">
                   <h4 className=" qr-title text-center text-[#54595F] after:!content-[unset]  md:after:!content-['']">

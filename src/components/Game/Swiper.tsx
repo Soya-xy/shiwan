@@ -7,9 +7,11 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
 import { useState } from 'react'
-import { Autoplay } from 'swiper/modules'
+import { Autoplay, Pagination } from 'swiper/modules'
 
 import { IMG_URL } from '~/constants/env'
+
+import 'swiper/css/pagination'
 
 export const SwiperTop = ({ banner_list = [] }: any) => {
   const [active, setActive] = useState(0)
@@ -25,12 +27,13 @@ export const SwiperTop = ({ banner_list = [] }: any) => {
           slidesPerView={1}
           onSlideChange={(e) => setActive(e.realIndex)}
           autoplay={{
-            delay: 2500,
+            delay: 55000,
             disableOnInteraction: false,
           }}
           loop={true}
+          pagination={true}
           onSwiper={(swiper) => setSwiper(swiper)}
-          modules={[Autoplay]}
+          modules={[Autoplay, Pagination]}
         >
           {banner_list.length > 0 &&
             banner_list.map((v: any, k: number) => {
@@ -44,7 +47,7 @@ export const SwiperTop = ({ banner_list = [] }: any) => {
                     <img
                       src={IMG_URL + v.imgUrl}
                       alt=""
-                      className="swiper-slides_img h-[300px] w-[100vw] border-0 outline-none md:h-[576px]"
+                      className="swiper-slides_img h-[420px] w-[100vw] border-0 outline-none md:h-[576px] max-md:object-cover max-md:object-[50%_50%]"
                     />
                   </div>
                 </SwiperSlide>
@@ -52,7 +55,7 @@ export const SwiperTop = ({ banner_list = [] }: any) => {
             })}
         </Swiper>
 
-        <div className="slide-pag bottom-5 left-[50%] w-full translate-x-[-50%]">
+        <div className="slide-pag bottom-5 left-[50%] !hidden w-full translate-x-[-50%] md:!flex">
           <div className="pag-cover">
             <div className="pag-bg" />
             {banner_list.length > 0 &&
