@@ -7,10 +7,11 @@ import { useRouter } from 'next/navigation'
 
 const Home: React.FC = () => {
   const [messageApi, contextHolder] = message.useMessage()
+
   const router = useRouter()
   const { data, refetch } = useQuery({
     queryKey: ['repoData'],
-    queryFn: () => fetch('/admin/games/api').then((res) => res.json()),
+    queryFn: () => fetch('/admin/banner/api').then((res) => res.json()),
     staleTime: 1,
   })
   return (
@@ -20,7 +21,7 @@ const Home: React.FC = () => {
         <Button
           type="primary"
           onClick={() => {
-            router.push('/admin/games/add')
+            router.push('/admin/banner/add')
           }}
         >
           添加
@@ -52,7 +53,7 @@ const Home: React.FC = () => {
                 <Button
                   type="primary"
                   onClick={() => {
-                    router.push(`/admin/games/edit/${item.id}`)
+                    router.push(`/admin/banner/edit/${item.id}`)
                   }}
                 >
                   编辑
@@ -61,7 +62,7 @@ const Home: React.FC = () => {
                   danger
                   className="ml-4"
                   onClick={() => {
-                    fetch(`/admin/games/edit/${item.id}/api`, {
+                    fetch(`/admin/banner/edit/${item.id}/api`, {
                       method: 'DELETE',
                     })
                       .then((res) => res.json())
@@ -75,7 +76,6 @@ const Home: React.FC = () => {
                       })
                   }}
                 >
-                  {' '}
                   删除
                 </Button>
               </div>,

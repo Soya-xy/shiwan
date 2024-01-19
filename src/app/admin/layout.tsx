@@ -122,34 +122,16 @@ export default async function RootLayout({
                     </div>
                     <nav className="mt-10 flex flex-col px-4 text-center">
                       <a
-                        href="#"
-                        className="rounded bg-gray-200 py-2 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-100"
+                        href="/admin"
+                        className="rounded  py-2 text-sm text-gray-700 dark:bg-gray-800 dark:text-gray-100"
                       >
-                        Overview
+                        游戏列表
                       </a>
                       <a
-                        href="#"
+                        href="/admin/banner"
                         className="mt-3 rounded py-2 text-sm text-gray-600 hover:bg-gray-200 hover:text-gray-700  dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100"
                       >
-                        Tickets
-                      </a>
-                      <a
-                        href="#"
-                        className="mt-3 rounded py-2 text-sm text-gray-600 hover:bg-gray-200 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100"
-                      >
-                        Ideas
-                      </a>
-                      <a
-                        href="#"
-                        className="mt-3 rounded py-2 text-sm text-gray-600 hover:bg-gray-200 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100"
-                      >
-                        Contacts
-                      </a>
-                      <a
-                        href="#"
-                        className="mt-3 rounded py-2 text-sm text-gray-600 hover:bg-gray-200 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-100"
-                      >
-                        Settings
+                        轮播图列表
                       </a>
                     </nav>
                   </div>

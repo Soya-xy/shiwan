@@ -34,7 +34,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts", "src/app/[locale]/api/route.js",
+    ".next/types/**/*.ts", "src/app/[locale]/api/route.js", "src/app/admin/banner/api/route.js",
   ],
   "exclude": [
     "node_modules",

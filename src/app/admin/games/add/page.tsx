@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import {
   Button,
   Checkbox,
@@ -7,6 +8,8 @@ import {
   Form,
   Input,
   InputNumber,
+  message,
+  Spin,
   Switch,
   Upload,
 } from 'antd'
@@ -18,10 +21,13 @@ import { locales } from '~/i18n'
 
 const FormDisabledDemo = () => {
   const [form] = Form.useForm()
-  const values = Form.useWatch([], form)
+  const [messageApi, contextHolder] = message.useMessage()
+  const [spinning, setSpinning] = useState<boolean>(false)
 
   function onFinish() {
-    fetch('/admin/add/api', {
+    setSpinning(true)
+
+    fetch('/admin/games/add/api', {
       method: 'POST',
       body: JSON.stringify(form.getFieldsValue(true)),
       headers: {
@@ -30,12 +36,24 @@ const FormDisabledDemo = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log('🚀 ~ onFinish ~ res:', res)
+        if (res.code === 1) {
+          setSpinning(false)
+          messageApi.open({
+            type: 'success',
+            content: '创建成功',
+          })
+        }
+      })
+      .catch(() => {
+        setSpinning(false)
       })
   }
   const router = useRouter()
   return (
     <>
+      <Spin spinning={spinning} fullscreen />
+
+      {contextHolder}
       <div className="flex w-full justify-start">
         <Button
           type="primary"
