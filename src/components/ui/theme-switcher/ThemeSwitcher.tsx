@@ -121,7 +121,7 @@ const ButtonGroup = () => {
   }
 
   const isClient = useIsClient()
-  if (isClient) buildThemeTransition('system')
+  if (isClient) buildThemeTransition('light')
 
   return (
     <div className="w-fit-content inline-flex rounded-full border border-slate-200 p-[3px] dark:border-neutral-800">

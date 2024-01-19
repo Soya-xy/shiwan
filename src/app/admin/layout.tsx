@@ -72,7 +72,7 @@ export const generateMetadata = async () => {
       },
       description: seo.description,
       siteName: `${seo.title}`,
-      locale: 'zh_CN',
+      locale: 'zh',
       type: 'website',
       url: url.webUrl,
       images: {

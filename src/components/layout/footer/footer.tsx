@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="">
               <div className="footer-widget">
                 <div className="footer-logo logo text-center md:text-start">
-                  <Link href="/contact">
+                  <Link href="#">
                     <Image src={logo} alt="Logo" width={177} height={40} />
                   </Link>
                 </div>
@@ -28,7 +28,7 @@ const Footer = () => {
                     <Link href="#">
                       <Image src={icon_1} alt="iocn" width={100} height={50} />
                     </Link>
-                    <Link href="#" className='ml-2'>
+                    <Link href="#" className="ml-2">
                       <Image src={icon_2} alt="iocn" width={100} height={50} />
                     </Link>
                   </div>

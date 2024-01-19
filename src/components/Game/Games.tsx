@@ -6,7 +6,7 @@ import {
   ChevronRightIcon,
   ChevronUpIcon,
 } from '@radix-ui/react-icons'
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment, useState } from 'react'
 
 import { useIsMobile } from '~/atoms'
 import { IMG_URL } from '~/constants/env'
@@ -94,15 +94,15 @@ const Grid = ({ info }: any) => {
           </div>
           <div
             className="g-cover"
-            style={{ background: `url("${IMG_URL + info.img_type}")` }}
+            style={{ background: `url("${IMG_URL + info.imgUrl}")` }}
           />
           <div
             className="g-reflect"
-            style={{ background: `url("${IMG_URL + info.img_type}")` }}
+            style={{ background: `url("${IMG_URL + info.imgUrl}")` }}
           />
-          <div className="g-bg" style={{ background: 'rgb(0, 149, 133)' }} />
+          <div className="g-bg" style={{ background: info.color }} />
           <div className="g-detail">
-            <div className="g-blur" style={{ background: 'rgb(0, 149, 133)' }}>
+            <div className="g-blur" style={{ background: info.color }}>
               <div
                 className="coverimg"
                 style={{ background: `url("${IMG_URL + info.img_type}")` }}
@@ -111,7 +111,7 @@ const Grid = ({ info }: any) => {
             <div className="detailtop">
               <div className="d-icon">
                 <div>
-                  <img src="https://public.pg-demo.com/pages/static/image/en/Small_Icon/dragon-hatch2/app_icon_small@3x-82aad7d1.png" />
+                  <img src={info.icon} />
                 </div>
               </div>
               <div className="d-note">
@@ -122,15 +122,15 @@ const Grid = ({ info }: any) => {
             <div className="detailbottom">
               <div className="detailrow r1">
                 <div>
-                  <div className="value">MEDIUM</div>
+                  <div className="value">{info.volatility}</div>
                   <div className="title">Volatility</div>
                 </div>
                 <div>
-                  <div className="value">96.76%</div>
+                  <div className="value">{info.rtp}</div>
                   <div className="title">RTP</div>
                 </div>
                 <div>
-                  <div className="value">x2500</div>
+                  <div className="value">x{info.maxwin}</div>
                   <div className="title">Maximum Win</div>
                 </div>
               </div>
@@ -203,7 +203,7 @@ const List = ({ data }: any) => {
                           <div className="newgame">
                             <img src="/img/tag_newlist_en@2x.01602bc.png" />
                           </div>
-                          <img src={IMG_URL + v.img_type} />
+                          <img src={v.icon} />
                         </div>
                         <span>{v.name}</span>
                       </div>
@@ -241,12 +241,14 @@ const List = ({ data }: any) => {
                     </div>
                     <div className="gamecol rtp w-[13%]">
                       <div>
-                        96.76<span className="light">%</span>
+                        {v.volatility}
+                        <span className="light">%</span>
                       </div>
                     </div>
                     <div className="gamecol maximum-win w-[19%]">
                       <div>
-                        <span className="light">x</span>2500
+                        <span className="light">x</span>
+                        {v.maxwin}
                       </div>
                     </div>
                     <div className="gamecol language w-[12%]">
@@ -307,26 +309,26 @@ export const Games = ({ data }: any) => {
   const [nowIndex, setNowIndex] = useState(1)
   const [gameList, setGameList] = useState<any[]>([])
 
-  function setData() {
-    const dataList: any = [gameList]
-    data.game_list.forEach((v: any) => {
-      if (
-        data.setting_data[active].id === v.game_type &&
-        dataList.length <= nowIndex * 10
-      ) {
-        dataList.push(v)
-      }
-    })
-    setGameList(dataList)
-  }
-  useEffect(() => {
-    setData()
-  }, [nowIndex])
+  // function setData() {
+  //   const dataList: any = [gameList]
+  //   data.game_list.forEach((v: any) => {
+  //     if (
+  //       data.setting_data[active].id === v.game_type &&
+  //       dataList.length <= nowIndex * 10
+  //     ) {
+  //       dataList.push(v)
+  //     }
+  //   })
+  //   setGameList(dataList)
+  // }
+  // useEffect(() => {
+  //   setData()
+  // }, [nowIndex])
 
-  useEffect(() => {
-    setNowIndex(1)
-    setData()
-  }, [active])
+  // useEffect(() => {
+  //   setNowIndex(1)
+  //   setData()
+  // }, [active])
   return (
     <>
       <div className="allgame">
@@ -362,14 +364,10 @@ export const Games = ({ data }: any) => {
         </div>
         <div className="space-p-2 flex flex-wrap">
           {tab === 'grid' &&
-            gameList.map((v: any, k: number) => {
-              return (
-                data.setting_data[active].id === v.game_type && (
-                  <Grid info={v} key={k} />
-                )
-              )
+            data.map((v: any, k: number) => {
+              return <Grid info={v} key={k} />
             })}
-          {tab === 'list' && <List data={gameList} />}
+          {tab === 'list' && <List data={data} />}
         </div>
       </div>
       <div className="barcover">

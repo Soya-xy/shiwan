@@ -16,16 +16,16 @@ export default function Home() {
   return (
     <>
       {isPending && <div>Loading...</div>}
-      {!isPending && data?.data && (
+      {!isPending && data && (
         <Fragment>
-          <SwiperTop banner_list={data?.data?.banner_list || []} />
+          <SwiperTop banner_list={data?.banner || []} />
           <div className="md:!hidden">
             <TopNav />
           </div>
 
           <div className="bg-blur bg-[#1F1F1D] py-10">
             <div className="container  mx-auto">
-              <Games data={data.data} />
+              <Games data={data.game} />
             </div>
           </div>
         </Fragment>

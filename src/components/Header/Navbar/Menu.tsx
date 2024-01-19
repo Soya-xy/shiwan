@@ -38,7 +38,7 @@ export function Menu() {
 
   const language = [
     { value: 'en', label: 'EN' },
-    { value: 'zh_CN', label: '简中' },
+    { value: 'zh', label: '简中' },
     { value: 'id', label: 'Indonesia' },
     { value: 'ko', label: '한국어' },
     { value: 'ms', label: 'Melayu' },

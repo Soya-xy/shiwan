@@ -1,5 +1,4 @@
 // @ts-ignore
-import { unserialize } from 'php-unserialize'
 
 export const debounce = <F extends (...args: any[]) => any>(
   func: F,
@@ -133,5 +132,3 @@ export const isShallowEqualArray = <T>(arr1: T[], arr2: T[]): boolean => {
 
   return true
 }
-
-export const unser = unserialize

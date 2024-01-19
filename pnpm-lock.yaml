@@ -71,9 +71,6 @@ dependencies:
   clsx:
     specifier: 2.1.0
     version: 2.1.0
-  crypto-js:
-    specifier: ^4.2.0
-    version: 4.2.0
   dayjs:
     specifier: 1.11.10
     version: 1.11.10
@@ -98,9 +95,6 @@ dependencies:
   js-cookie:
     specifier: 3.0.5
     version: 3.0.5
-  memory-cache:
-    specifier: ^0.2.0
-    version: 0.2.0
   mysql2:
     specifier: ^3.7.1
     version: 3.7.1
@@ -113,9 +107,6 @@ dependencies:
   next-themes:
     specifier: 0.2.1
     version: 0.2.1(next@14.0.4)(react-dom@18.2.0)(react@18.2.0)
-  php-unserialize:
-    specifier: ^0.0.1
-    version: 0.0.1
   pixi-spine:
     specifier: ^4.0.4
     version: 4.0.4(@pixi/assets@7.3.3)(@pixi/core@7.3.3)(@pixi/display@7.3.3)(@pixi/graphics@7.3.3)(@pixi/mesh-extras@7.3.3)(@pixi/mesh@7.3.3)(@pixi/sprite@7.3.3)
@@ -3631,10 +3622,6 @@ packages:
       which: 2.0.2
     dev: true
 
-  /crypto-js@4.2.0:
-    resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
-    dev: false
-
   /css-blank-pseudo@6.0.0(postcss@8.4.33):
     resolution: {integrity: sha512-VbfLlOWO7sBHBTn6pwDQzc07Z0SDydgDBfNfCE0nvrehdBNv9RKsuupIRa/qal0+fBZhAALyQDPMKz5lnvcchw==}
     engines: {node: ^14 || ^16 || >=18}
@@ -5133,10 +5120,6 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: false
 
-  /memory-cache@0.2.0:
-    resolution: {integrity: sha512-OcjA+jzjOYzKmKS6IQVALHLVz+rNTMPoJvCztFaZxwG14wtAW7VRZjwTQu06vKCYOxh4jVnik7ya0SXTB0W+xA==}
-    dev: false
-
   /merge-stream@2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
     dev: true
@@ -5491,10 +5474,6 @@ packages:
 
   /pg-connection-string@2.6.2:
     resolution: {integrity: sha512-ch6OwaeaPYcova4kKZ15sbJ2hKb/VP48ZD2gE7i1J+L4MspCtBMAx8nMgz7bksc7IojCIIWuEhHibSMFH8m8oA==}
-    dev: false
-
-  /php-unserialize@0.0.1:
-    resolution: {integrity: sha512-aZWuX3gQ30Dui+Lff19q0jeu+3DHpSYXFEQPkeAx4WAyDtAp5VI30ZPC5wb4OrcHy6KUiZIRFRTWkvK8l8l6Rw==}
     dev: false
 
   /picocolors@1.0.0:
