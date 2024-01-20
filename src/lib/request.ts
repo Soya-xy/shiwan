@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-import { API_URL } from '~/constants/env'
-
 import PKG from '../../package.json'
 import { getToken } from './cookie'
 import { isClientSide, isDev, isServerSide } from './env'
@@ -22,7 +20,7 @@ if (isClientSide) {
 }
 
 export const $axios = axios.create({
-  baseURL: API_URL,
+  // baseURL: API_URL,
 })
 
 $axios.defaults.timeout = 8000

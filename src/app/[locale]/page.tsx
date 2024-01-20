@@ -5,6 +5,7 @@ import { Fragment } from 'react'
 
 import { useIsMobile } from '~/atoms'
 import { Games, TopNav } from '~/components/Game/Games'
+import { Search } from '~/components/Game/Search'
 // import { motion } from 'framer-motion'
 import { SwiperTop } from '~/components/Game/Swiper'
 import { GameTabbar } from '~/components/Game/Tabbar'
@@ -32,7 +33,10 @@ export default function Home() {
               <Games data={data.game} />
             </div>
           </div>
-          <div className="game-mainpage">{isMobile && <GameTabbar />}</div>
+          <div className="game-mainpage">
+            {isMobile && <GameTabbar />}
+            <Search />
+          </div>
         </Fragment>
       )}
     </>

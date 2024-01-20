@@ -12,9 +12,11 @@ import { useParams } from 'next/navigation'
 import { useIsMobile } from '~/atoms'
 import { IMG_URL } from '~/constants/env'
 import { usePathname, useRouter } from '~/i18n'
+import { jotaiStore } from '~/lib/store'
 
 import { language } from '../Header/Navbar/Menu'
 import { FloatPopover } from '../ui/float-popover'
+import { searchShow } from './Search'
 
 const SortBy = ({ list, active, setActive }: any) => {
   const [open, setOpen] = useState(false)
@@ -320,7 +322,7 @@ export const Games = ({ data }: any) => {
       <div className="allgame">
         <div className="mb-5 flex justify-between max-md:ml-[20px] max-md:mt-[50px]">
           <h1 className="my-4 text-[30px] font-bold text-[#000]">ALL Games</h1>
-          <div className="touch-dropdown mr-4 md:hidden">
+          <div className="touch-dropdown mr-4 md:!hidden">
             <div className="dropdown">
               <div>
                 <div
@@ -381,6 +383,14 @@ export const Games = ({ data }: any) => {
                 setActive={setActive}
               />
             </div> */}
+            <div
+              className="relative cursor-pointer d-center"
+              onClick={() => {
+                jotaiStore.set(searchShow, true)
+              }}
+            >
+              <img src="/img/Icon20_Search.21bc271.svg" />
+            </div>
             <div className="sort relative ml-4 flex items-center">
               <span className="mr-4">View :</span>
               <div className="gap-2 text-2xl text-[#B2B2B2] d-center ">

@@ -37,6 +37,11 @@ export const queryClient = new QueryClient({
   },
 })
 
+queryClient.invalidateQueries({
+  queryKey: ['noCache'],
+  exact: true,
+})
+
 const persistOptions: Omit<PersistQueryClientOptions, 'queryClient'> = {
   persister: asyncStoragePersister,
   maxAge: 1000 * 60 * 60 * 24 * 7, // 1 week
