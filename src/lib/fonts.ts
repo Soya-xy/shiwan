@@ -1,19 +1,12 @@
-import { Barlow, Noto_Serif_SC } from 'next/font/google'
+// import { Barlow, Noto_Serif_SC } from 'next/font/google'
+import localFont from 'next/font/local'
 
-const sansFont = Barlow({
-  subsets: ['vietnamese'],
-  weight: ['400', '500', '700'],
-  variable: '--font-sans',
-  display: 'swap',
+const sansFont = localFont({
+  src: '../../public/fonts/BoxedLight.woff2',
 })
 
-const serifFont = Noto_Serif_SC({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-serif',
-  display: 'swap',
-  // adjustFontFallback: false,
-  fallback: ['Noto Serif SC'],
+const serifFont = localFont({
+  src: '../../public/fonts/BoxedLight.woff2',
 })
 
 export { sansFont, serifFont }

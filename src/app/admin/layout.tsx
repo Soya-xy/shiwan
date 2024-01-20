@@ -106,7 +106,7 @@ export default async function RootLayout({
           <HydrationEndDetector />
         </head>
         <body
-          className={`${sansFont.variable} ${serifFont.variable} m-0 h-full p-0 font-sans`}
+          className={`${sansFont.className} ${serifFont.className} m-0 h-full p-0 font-sans`}
         >
           <Providers>
             <div data-theme>
