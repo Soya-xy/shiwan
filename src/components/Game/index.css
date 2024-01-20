@@ -1736,7 +1736,7 @@
   height: 200px
 }
 
-.game-search>.search-cover>.s-result>.result-default>.default img.default-img {
+.default-img {
   display: block;
   position: absolute;
   width: 200px;
@@ -1793,7 +1793,7 @@
   z-index: 1
 }
 
-.game-search>.search-cover>.s-result .load-loop {
+ .load-loop {
   display: block;
   position: absolute;
   width: 200px;
