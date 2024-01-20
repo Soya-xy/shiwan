@@ -39,7 +39,6 @@ export const queryClient = new QueryClient({
 
 queryClient.invalidateQueries({
   queryKey: ['noCache'],
-  exact: true,
 })
 
 const persistOptions: Omit<PersistQueryClientOptions, 'queryClient'> = {

@@ -15,8 +15,8 @@ export const Search = () => {
   const [searchResult, setSearchResult] = useState([]) as any[]
   const [value, setValue] = useState('')
 
-  const { data, refetch, isFetched, isFetching, fetchStatus } = useQuery({
-    queryKey: ['noCache'],
+  const { data, refetch, isFetched, isFetching } = useQuery({
+    queryKey: ['noCache_Search'],
     queryFn: () => $axios.get('/search', { params: { name: value } }),
     enabled: false,
   })
@@ -33,6 +33,7 @@ export const Search = () => {
   useEffect(() => {
     if (!show) {
       setIsSearch(false)
+      setSearchResult([])
       setValue('')
     }
   }, [show])
@@ -71,68 +72,44 @@ export const Search = () => {
             </div>
           </div>
           <div className="s-result">
-            {!isSearch && (
+            {searchResult.length <= 0 && (
               <div className="result-default">
                 <div className="default">
                   <img
                     src="/img/Boy_circle@2x.8ab120b.png"
                     className="default-bg"
                   />
-                  <img
-                    src="/img/Boy_normal@2x.93f1447.png"
-                    className="default-img"
-                  />
-                  {isSearch && (
+                  {!isSearch && (
+                    <img
+                      src="/img/Boy_normal@2x.93f1447.png"
+                      className="default-img"
+                    />
+                  )}
+                  {isSearch && isFetched && (
+                    <img
+                      src="/img/Boy_nodata@2x.9b00cd8.png"
+                      className="default-img"
+                    />
+                  )}
+                  {isFetching && (
                     <img
                       src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQBAMAAABykSv/AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAPUExURUxpcQBZ7gBZ7gBZ7gBZ7pmvuWsAAAAFdFJOUwAdqEh5pgqJvgAAAZVJREFUeNrt2oGNnDAUBFDQXgE4NJAQCjjOFJCA+68p9iY1RGL0Xgej/8crL54mAAAAAAAAAAAAAAAAAAAAAAAAAID/a57njCBLykCmpQvIsZSMgZSylISJzKWUiLKXIWG73kECJvI61pHk+UHWOoIEVL3Wox4BQdbak6zP36z5rMPzB/K6R5KAqp+t9SSfz9+s1u77Dtisj9adR8Rm9ZkkbNa+9yDPH8jHtl2t/X5+kK/t6kkCNmvr9j1is7qIzRpCNmuL2awfzw/yLWSzpusdJOCynrJZfyvyK+XwnUIq8jOgIu8g3wMq0kaQ598N+51qj/hZn1q7roTDd24jScDh++pB9j2gIuv7b4eAitTzjLitz7XeLeC2PoL0kQRU5FX7SGpARcZnkRpQkakcPchnQpCMzzvvRwJrQkV6kOM4MoKUsiRUpDsSgiwpE1mWiFcb/5IkdH1YppCRLBkxUh7IxphNBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBUfwBvDC+COA1OnwAAAABJRU5ErkJggg=="
                       className="load-loop"
                       alt=""
                     />
                   )}
-                  <span>
-                    {!isSearch ? 'SEARCH' : 'just wait a moment，please'}
-                  </span>
-                </div>
-              </div>
-            )}
 
-            {isSearch && isFetching && (
-              <div className="result-default">
-                <div className="default">
-                  <img
-                    src="/img/Boy_circle@2x.8ab120b.png"
-                    className="default-bg"
-                  />
-                  <img
-                    src="/img/Boy_normal@2x.93f1447.png"
-                    className="default-img"
-                  />
-                  <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQBAMAAABykSv/AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAPUExURUxpcQBZ7gBZ7gBZ7gBZ7pmvuWsAAAAFdFJOUwAdqEh5pgqJvgAAAZVJREFUeNrt2oGNnDAUBFDQXgE4NJAQCjjOFJCA+68p9iY1RGL0Xgej/8crL54mAAAAAAAAAAAAAAAAAAAAAAAAAID/a57njCBLykCmpQvIsZSMgZSylISJzKWUiLKXIWG73kECJvI61pHk+UHWOoIEVL3Wox4BQdbak6zP36z5rMPzB/K6R5KAqp+t9SSfz9+s1u77Dtisj9adR8Rm9ZkkbNa+9yDPH8jHtl2t/X5+kK/t6kkCNmvr9j1is7qIzRpCNmuL2awfzw/yLWSzpusdJOCynrJZfyvyK+XwnUIq8jOgIu8g3wMq0kaQ598N+51qj/hZn1q7roTDd24jScDh++pB9j2gIuv7b4eAitTzjLitz7XeLeC2PoL0kQRU5FX7SGpARcZnkRpQkakcPchnQpCMzzvvRwJrQkV6kOM4MoKUsiRUpDsSgiwpE1mWiFcb/5IkdH1YppCRLBkxUh7IxphNBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBUfwBvDC+COA1OnwAAAABJRU5ErkJggg=="
-                    className="load-loop"
-                    alt=""
-                  />
-                  <span>just wait a moment，please</span>
-                </div>
-              </div>
-            )}
-
-            {isSearch && !isFetching && searchResult.length <= 0 && (
-              <div className="result-default">
-                <div className="default">
-                  <img
-                    src="/img/Boy_circle@2x.8ab120b.png"
-                    className="default-bg"
-                  />
-                  <img
-                    src="/img/Boy_nodata@2x.9b00cd8.png"
-                    className="default-img"
-                  />
-                  <span>
-                    WHOOPS!
-                    <br />
-                    We couldn`t find the game you were looking for.
-                  </span>
+                  {isSearch && isFetched ? (
+                    <span>
+                      WHOOPS!
+                      <br />
+                      We couldn`t find the game you were looking for.
+                    </span>
+                  ) : (
+                    <span>
+                      {!isFetching ? 'SEARCH' : 'Just wait a moment，please'}
+                    </span>
+                  )}
                 </div>
               </div>
             )}
