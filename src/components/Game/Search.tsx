@@ -79,13 +79,13 @@ export const Search = () => {
                     src="/img/Boy_circle@2x.8ab120b.png"
                     className="default-bg"
                   />
-                  {!isSearch && (
+                  {(isFetching || !isSearch) && (
                     <img
                       src="/img/Boy_normal@2x.93f1447.png"
                       className="default-img"
                     />
                   )}
-                  {isSearch && isFetched && (
+                  {isSearch && !isFetching && (
                     <img
                       src="/img/Boy_nodata@2x.9b00cd8.png"
                       className="default-img"
@@ -99,7 +99,7 @@ export const Search = () => {
                     />
                   )}
 
-                  {isSearch && isFetched ? (
+                  {isSearch && !isFetching ? (
                     <span>
                       WHOOPS!
                       <br />

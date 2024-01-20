@@ -458,7 +458,12 @@ export const TopNav = () => {
               <div>TIMELINE</div>
             </div>
           </div>
-          <div className="menubox">
+          <div
+            className="menubox"
+            onClick={() => {
+              jotaiStore.set(searchShow, true)
+            }}
+          >
             <div>
               <div className="s_icon">
                 <img src="/img/Icon20_Search.21bc271.svg" />

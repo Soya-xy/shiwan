@@ -15,7 +15,7 @@ const clientConfig = {
   },
 }
 
-function sleep(ms: number) {
+export function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 export async function translate(raw: string, type: string) {
