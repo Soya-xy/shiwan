@@ -1,13 +1,9 @@
 import dayjs from 'dayjs'
-
-import 'dayjs/locale/zh-cn'
-
 import customParseFormat from 'dayjs/plugin/customParseFormat'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
 
 dayjs.extend(customParseFormat)
 dayjs.extend(LocalizedFormat)
-dayjs.locale('zh-cn')
 
 export enum DateFormat {
   'MMM DD YYYY',
@@ -18,7 +14,6 @@ export enum DateFormat {
   'YYYY-MM-DD dddd',
   'YYYY-MM-DD ddd',
   'MM-DD ddd',
-
   'YYYY 年 M 月 D 日 dddd',
 }
 
@@ -82,3 +77,28 @@ export const secondOfDay = () => {
 }
 
 export const secondOfDays = 86400
+
+export const calcTime = () => {
+  // 获取当前日期
+  const currentDate = dayjs()
+
+  // 生成3年前到今天的月份
+  const result: any = {}
+  for (let i = 0; i < 4; i++) {
+    const year = currentDate.subtract(i, 'year').year()
+    const months = Array.from({ length: 12 }, (_, index) => index + 1).reverse()
+
+    // 如果是当前年份，只获取到当前月份
+    const endMonth = year === currentDate.year() ? currentDate.month() + 1 : 12
+
+    result[year] = months.slice(0, endMonth).map((month) =>
+      dayjs()
+        .year(year)
+        .month(month - 1)
+        .format('M月'),
+    )
+  }
+  return Object.entries(result).sort(
+    (a, b) => parseInt(b[0], 10) - parseInt(a[0], 10),
+  )
+}

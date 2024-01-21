@@ -16,7 +16,6 @@ export default function Home() {
     queryFn: () => fetch('/api').then((res) => res.json()),
     staleTime: 1,
   })
-  console.log('🚀 ~ Home ~ data:', isPending, data)
 
   const isMobile = useIsMobile()
   return (

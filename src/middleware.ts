@@ -21,7 +21,6 @@ const i18nMiddleware = createMiddleware({
 
 export default async function middleware(req: NextRequest) {
   const { pathname, search } = req.nextUrl
-  console.log('🚀 ~ middleware ~ pathname:', pathname)
 
   if (pathname.startsWith('/admin')) {
     return NextResponse.next()

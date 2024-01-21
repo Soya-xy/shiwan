@@ -21,12 +21,18 @@ export const menuList = [
 
 export const Navbar = () => {
   const [active, setActive] = useState(0)
+  const [isDark, setIsDark] = useState(false)
   const [isActived, setIsActived] = useState(false)
   const path = usePathname()
   useEffect(() => {
     menuList.forEach((v, k) => {
       if (v.url === path) {
         setActive(k)
+        if (k !== 0) {
+          setIsDark(true)
+        } else {
+          setIsDark(false)
+        }
       }
     })
   }, [path])
@@ -38,7 +44,7 @@ export const Navbar = () => {
   const [showMobMenu, setShowMobMenu] = useState(false)
   const [setDown, setSetDown] = useState(false)
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    if (latest > 0.04) {
+    if (latest > 0.04 && document.body.offsetHeight > screen.availHeight) {
       setIsActived(true)
     } else {
       setIsActived(false)
@@ -47,11 +53,25 @@ export const Navbar = () => {
 
   return (
     <div className="top-navigator nav-empty">
-      <div className={clsx(isActived ? ' active' : '', 'main-navi')}>
+      <div
+        className={clsx(isActived ? ' active' : '', 'main-navi')}
+        style={{
+          background: isDark
+            ? '#ffff'
+            : 'linear-gradient(180deg, rgba(0, 0, 0, .5) 10%, transparent)',
+        }}
+      >
         <div className="logo-left">
-          <img src="/images/logo_white.png" className="white" />
+          <img
+            src="/images/logo_white.png"
+            className={isDark ? '!hidden' : 'white'}
+          />
+          <img
+            src="/images/logo.png"
+            className={!isDark ? '!hidden' : 'block'}
+          />
         </div>
-        <div className="menu-right !d-center">
+        <div className="menu-right cursor-pointer !d-center">
           <div className="menu">
             {menuList.map((v, k) => {
               return (
@@ -62,13 +82,13 @@ export const Navbar = () => {
                     router.replace(v.url)
                   }}
                 >
-                  <a className="">{v.name}</a>
+                  <a className={isDark ? 'dark_a' : ''}>{v.name}</a>
                 </div>
               )
             })}
           </div>
           <div className="h-[90px] border-b-1 border-b-[#ffffff33] d-center">
-            <Menu />
+            <Menu dark={isDark} />
           </div>
           <div className="main-enquiry">
             <div
@@ -103,17 +123,20 @@ export const Navbar = () => {
       </div>
 
       {/* 移动端 上面的 */}
-      <div className={clsx(isActived ? 'scrolled' : '', 'mob-nav')}>
-        <div className="mob-overlay" />
+      <div
+        className={clsx(isActived && !isMobile ? 'scrolled' : '', 'mob-nav')}
+        style={{ background: isDark ? 'white !important' : '' }}
+      >
+        {!isDark && <div className="mob-overlay" />}
         <div className="mob-logo">
-          <img
-            src="/img/nav_common_logo_black@2x.f6c2419.png"
-            className="black"
-          />
-          <img
-            src="/img/nav_common_logo_white@2x.063bde3.png"
-            className="white"
-          />
+          {isDark ? (
+            <img src="/img/nav_common_logo_black@2x.f6c2419.png" className="" />
+          ) : (
+            <img
+              src="/img/nav_common_logo_white@2x.063bde3.png"
+              className="white"
+            />
+          )}
         </div>
         <div
           className="mob-toggle"
@@ -129,7 +152,12 @@ export const Navbar = () => {
         </div>
       </div>
       {/* 移动端 滚动的 */}
-      <div className={clsx(isActived ? 'scrolled' : '', 'mobscroll-nav')}>
+      <div
+        className={clsx(
+          isActived && !isMobile ? 'scrolled' : '',
+          'mobscroll-nav',
+        )}
+      >
         <div className="mob-cover">
           <div className="mob-logo">
             <img src="/img/Logo_small.23d0a2c.svg" className="black" />

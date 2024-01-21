@@ -4,10 +4,20 @@ import { CheckIcon, ChevronDownIcon } from '@radix-ui/react-icons'
 import * as Select from '@radix-ui/react-select'
 import { forwardRef, useEffect, useRef, useState } from 'react'
 import clsx from 'clsx'
+import dayjs from 'dayjs'
 import { useParams } from 'next/navigation'
 
 import { useAudioPlayer } from '~/hooks/shared/use-audio'
 import { usePathname, useRouter } from '~/i18n'
+
+import 'dayjs/locale/zh-cn'
+import 'dayjs/locale/en'
+import 'dayjs/locale/id'
+import 'dayjs/locale/ko'
+import 'dayjs/locale/ms'
+import 'dayjs/locale/vi'
+import 'dayjs/locale/ja'
+import 'dayjs/locale/ru'
 
 export const language = [
   { value: 'en', label: 'EN' },
@@ -37,7 +47,18 @@ const SelectItem = forwardRef(
   },
 )
 
-export function Menu() {
+export const languageDayjs: any = {
+  zh: 'zh-cn',
+  en: 'en',
+  ja: 'ja',
+  ko: 'ko',
+  id: 'id',
+  ms: 'ms',
+  vi: 'vi',
+  ru: 'ru',
+}
+export function Menu({ dark = false }: { dark: boolean }) {
+  console.log('🚀 ~ Menu ~ dark:', dark)
   const containerRef = useRef(null)
   const [isOpen] = useState(false)
   const { play } = useAudioPlayer('/music/click.wav')
@@ -55,13 +76,15 @@ export function Menu() {
     }
   }, [isOpen])
 
+  if (param.locale) dayjs.locale(languageDayjs[param.locale as any] as any)
+
   return (
     <div className="flex items-center">
       {/* i18n */}
       <Select.Root
         defaultValue={param.locale as string}
         onValueChange={(e) => {
-          console.log('🚀 ~ Menu ~ e:', pathname, e)
+          dayjs.locale(languageDayjs[e])
           router.push(pathname, { locale: e })
         }}
         onOpenChange={(e) => {
@@ -73,7 +96,10 @@ export function Menu() {
         }}
       >
         <Select.Trigger
-          className="relative mr-10 flex items-center justify-between rounded border px-2 py-1   text-white"
+          className={clsx(
+            'relative mr-10 flex items-center justify-between rounded border px-2 py-1',
+            !dark ? 'text-white' : 'text-black',
+          )}
           aria-label="Food"
         >
           <Select.Value placeholder="EN" />
@@ -95,7 +121,10 @@ export function Menu() {
                     <SelectItem
                       value={v.value}
                       key={k}
-                      className="cursor-pointer p-2  text-white hover:bg-[#ffffff1f]"
+                      className={clsx(
+                        'cursor-pointer p-2  hover:bg-[#ffffff1f]',
+                        !dark ? 'text-white' : 'text-black',
+                      )}
                     >
                       {v.label}
                     </SelectItem>

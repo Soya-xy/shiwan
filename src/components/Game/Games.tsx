@@ -7,6 +7,7 @@ import {
   ChevronUpIcon,
 } from '@radix-ui/react-icons'
 import { Fragment, useState } from 'react'
+import dayjs from 'dayjs'
 import { useParams } from 'next/navigation'
 
 import { useIsMobile } from '~/atoms'
@@ -14,7 +15,7 @@ import { IMG_URL } from '~/constants/env'
 import { usePathname, useRouter } from '~/i18n'
 import { jotaiStore } from '~/lib/store'
 
-import { language } from '../Header/Navbar/Menu'
+import { language, languageDayjs } from '../Header/Navbar/Menu'
 import { FloatPopover } from '../ui/float-popover'
 import { searchShow } from './Search'
 
@@ -354,6 +355,7 @@ export const Games = ({ data }: any) => {
                         onClick={(e) => {
                           e.preventDefault()
                           setActive(k)
+                          dayjs.locale(languageDayjs[v.value])
                           router.replace(pathname, { locale: v.value })
                         }}
                       >
