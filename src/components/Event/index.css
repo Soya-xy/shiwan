@@ -1,0 +1,1791 @@
+#events2019 .clear {
+  display: block;
+  width: 100%;
+  float: none;
+  overflow: hidden
+}
+
+#events2019 .left {
+  display: block;
+  float: left
+}
+
+#events2019 .right {
+  display: block;
+  float: right
+}
+
+#events2019 .bg-cover {
+  display: block;
+  width: 100%;
+  overflow: hidden
+}
+
+#events2019 .bg-img {
+  display: block;
+  width: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  transform-origin: 50% 50%
+}
+
+#events2019 .text-title {
+  display: block;
+  font-size: 48px;
+  line-height: 48px;
+  color: #000;
+  margin: 0 0 88px
+}
+
+#events2019 .text {
+  display: block;
+  font-size: 18px;
+  line-height: 34px;
+  color: #666
+}
+
+#events2019 .row-cover {
+  display: block;
+  padding: 88px 0;
+  background: #fff;
+  overflow: hidden
+}
+
+#events2019 .row-cover .animation-container {
+  display: block;
+  position: relative;
+  max-width: 1128px;
+  width: 100%;
+  margin: 0 auto
+}
+
+#events2019 .row-cover .animation-container .content {
+  display: block
+}
+
+#events2019 #GalleryLightbox {
+  opacity: 0
+}
+
+#events2019 .parallax .row {
+  width: 100%;
+  position: relative;
+  z-index: 9
+}
+
+#events2019 .parallax .cover {
+  position: relative;
+}
+
+#events2019 .parallax .cover .fixed {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 90px;
+  z-index: 1
+}
+
+#events2019 .parallax .cover .nav {
+  width: 100%;
+  height: 155px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 90px 0 0
+}
+
+#events2019 .parallax .cover .nav a {
+  font-size: 20px;
+  width: 100px;
+  color: #000;
+  text-decoration: none;
+  opacity: .4
+}
+
+#events2019 .parallax .cover .nav a:hover {
+  opacity: 1
+}
+
+#events2019 .parallax .cover .nav .active {
+  color: #000;
+  opacity: 1
+}
+
+#events2019 .parallax .cover .full-bg {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 90px);
+  overflow: hidden;
+  background: #000;
+  box-sizing: border-box;
+  padding: 0 30px
+}
+
+#events2019 .parallax .cover .full-bg .cover-img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: 50% 50%;
+  transform-origin: 50% 50%
+}
+
+#events2019 .parallax .cover .full-bg .pg-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+#events2019 .parallax .cover .full-bg .pg-container .cover-title {
+  display: block;
+  width: 100%;
+  text-align: center
+}
+
+#events2019 .parallax .cover .full-bg .pg-container .cover-title .year {
+  display: inline-block;
+  width: 316px;
+  height: 151px;
+  margin: 0 0 45px;
+  text-align: left
+}
+
+#events2019 .parallax .cover .full-bg .pg-container .cover-title .text-title {
+  font-size: 80px;
+  line-height: 80px;
+  margin: 0 0 40px;
+  text-align: left;
+  color: #fff;
+  text-align: center
+}
+
+#events2019 .parallax .cover .full-bg .pg-container .cover-title .desc {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  line-height: 36px;
+  max-width: 740px;
+  width: 100%;
+  margin: 0 auto
+}
+
+#events2019 .parallax .cover .full-bg .pg-container .cover-title>.subtitle {
+  font-size: 18px;
+  line-height: 33px;
+  text-align: left;
+  color: #fff;
+  overflow: hidden
+}
+
+#events2019 .parallax .cover .full-bg .pg-container .cover-title>.subtitle>div {
+  transform: translateY(0)
+}
+
+#events2019 .parallax .cover .full-bg .pg-container>.ice {
+  position: absolute;
+  width: 250px;
+  top: 0;
+  right: 0
+}
+
+#events2019 .parallax .cover .full-bg .pg-container>.ice .ice-cover {
+  position: absolute;
+  width: 250px;
+  height: 60px;
+  top: 0;
+  left: 0;
+  overflow: hidden
+}
+
+#events2019 .parallax .cover .full-bg .pg-container>.ice .ice-cover .ice-animation {
+  position: absolute;
+  width: 250px;
+  height: 60px;
+  background: rgba(94, 45, 145, .95);
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff
+}
+
+#events2019 .parallax .cover .full-bg .pg-container>.ice .ice-cover .ice-animation>div {
+  float: left
+}
+
+#events2019 .parallax .cover .full-bg .pg-container>.ice .ice-cover .ice-animation>.line {
+  height: 32px;
+  width: 1px;
+  background: #fff;
+  margin: 0 19px 0 18px;
+  opacity: .3
+}
+
+#events2019 .parallax .cover .full-bg .pg-container>.ice .ice-cover .ice-animation>loc {
+  padding: 0 10px 0 0
+}
+
+#events2019 .parallax .cover .full-bg .pg-container>.ice .ice-cover .ice-animation>.london {
+  width: 70px;
+  font-size: 15px
+}
+
+#events2019 .parallax .cover .full-bg .mouse {
+  display: block;
+  position: absolute;
+  bottom: 35px;
+  left: calc(50% - 18px);
+  width: 36px;
+  height: 51px
+}
+
+#events2019 .parallax .cover .full-bg .play-video-button {
+  position: absolute;
+  display: block;
+  right: 0;
+  bottom: 50px;
+  width: 78px;
+  height: 78px
+}
+
+#events2019 .parallax .cover .full-bg .play-video-button span.pv-bg {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  transition: visibility 0s .25s;
+  background: #ff1c4f;
+  border-radius: 50%;
+  border: 6px solid rgba(0, 0, 0, .16)
+}
+
+#events2019 .parallax .cover .full-bg .play-video-button span.pv-fg {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 28, 79, .8)
+}
+
+#events2019 .parallax .cover .full-bg .play-video-button span.pv-line {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  height: 1px;
+  width: 152px;
+  background: #fff;
+  transition: transform .2s ease-out;
+  -ms-transform: scaleX(0);
+  transform: scaleX(0);
+  -ms-transform-origin: 100% 0;
+  transform-origin: 100% 0
+}
+
+#events2019 .parallax .cover .full-bg .play-video-button span.pv-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 12.5px solid transparent;
+  border-bottom: 12.5px solid transparent;
+  border-left: 21px solid #fff;
+  top: 50%;
+  left: 54%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
+}
+
+#events2019 .parallax .cover .full-bg .play-video-button span.pv-text {
+  position: absolute;
+  right: 80%;
+  top: 50%;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 1px;
+  color: #fff;
+  letter-spacing: 0;
+  margin-top: -17px;
+  transition: right .2s ease-out
+}
+
+#events2019 .parallax .cover .full-bg .play-video-button:hover {
+  cursor: pointer
+}
+
+#events2019 .parallax .cover .full-bg .play-video-button:hover span.pv-bg {
+  transition: visibility 0s 0s;
+  visibility: visible
+}
+
+#events2019 .parallax .cover .full-bg .play-video-button:hover span.pv-fg {
+  -ms-transform: scale(.8);
+  transform: scale(.8)
+}
+
+#events2019 .parallax .cover .full-bg .play-video-button:hover span.pv-line {
+  -ms-transform: scaleX(1);
+  transform: scaleX(1)
+}
+
+#events2019 .parallax .cover .full-bg .play-video-button:hover span.pv-text {
+  right: 123%
+}
+
+#events2019 .parallax .event-row1 {
+  display: block;
+  width: 100%
+}
+
+#events2019 .parallax .event-row1 .text-title {
+  text-align: center
+}
+
+#events2019 .parallax .event-row1 .content {
+  display: block
+}
+
+#events2019 .parallax .event-row1 .content .left {
+  width: 481px;
+  margin: 0 70px 0 0
+}
+
+#events2019 .parallax .event-row1 .content .left .row1-left-img1 {
+  display: block;
+  position: relative;
+  width: 481px;
+  height: 600px
+}
+
+#events2019 .parallax .event-row1 .content .left .row1-left-img1 div {
+  display: block;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: #fff
+}
+
+#events2019 .parallax .event-row1 .content .right {
+  width: 577px;
+  float: left
+}
+
+#events2019 .parallax .event-row1 .content .right .row1-right-text1 {
+  display: block;
+  width: 310px;
+  margin: 0 0 120px
+}
+
+#events2019 .parallax .event-row1 .content .right .row1-right-img1 {
+  display: block;
+  position: relative;
+  width: 577px;
+  height: 480px;
+  margin: 0 0 55px
+}
+
+#events2019 .parallax .event-row1 .content .right .row1-right-img1 div {
+  display: block;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff
+}
+
+#events2019 .parallax .event-row1 .content .right .row1-right-text2 {
+  display: block;
+  width: 310px
+}
+
+#events2019 .parallax .event-row2 {
+  display: block;
+  overflow: hidden;
+  height: 400px
+}
+
+#events2019 .parallax .event-row2 .bg-cover {
+  height: 400px
+}
+
+#events2019 .parallax .event-row2 .bg-cover .bg-img {
+  height: 400px;
+  background-image: url(/img/2019events_banner_1@2x.99d1d65.jpg)
+}
+
+#events2019 .parallax .event-row3 {
+  display: block
+}
+
+#events2019 .parallax .event-row3 .text-title {
+  text-align: center;
+  margin: 0 0 88px
+}
+
+#events2019 .parallax .event-row3 .content .left {
+  width: 480px;
+  text-align: right;
+  margin: 0 70px 0 0
+}
+
+#events2019 .parallax .event-row3 .content .left .res-left-img1 {
+  display: none;
+  width: 100%
+}
+
+#events2019 .parallax .event-row3 .content .left .row3-left-text1 {
+  display: inline-block;
+  text-align: left;
+  width: 290px;
+  margin: 0 0 220px
+}
+
+#events2019 .parallax .event-row3 .content .left .row3-left-img1 {
+  display: block;
+  position: relative;
+  width: 480px;
+  height: 320px;
+  margin: 0 0 40px
+}
+
+#events2019 .parallax .event-row3 .content .left .row3-left-img1 div {
+  display: block;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff
+}
+
+#events2019 .parallax .event-row3 .content .left .row3-left-text2 {
+  display: inline-block;
+  text-align: left;
+  width: 290px;
+  font-size: 18px;
+  line-height: 34px
+}
+
+#events2019 .parallax .event-row3 .content .right {
+  display: block;
+  width: 503px;
+  float: left
+}
+
+#events2019 .parallax .event-row3 .content .right .row3-right-img1 {
+  display: block;
+  position: relative;
+  width: 503px;
+  height: 552px;
+  margin: 0 0 70px
+}
+
+#events2019 .parallax .event-row3 .content .right .row3-right-img1 div {
+  display: block;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff
+}
+
+#events2019 .parallax .event-row3 .content .right .row3-right-img2 {
+  display: block;
+  position: relative;
+  width: 288px;
+  height: 288px
+}
+
+#events2019 .parallax .event-row3 .content .right .row3-right-img2 div {
+  display: block;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff
+}
+
+#events2019 .parallax .event-row4 {
+  display: block;
+  height: 400px;
+  overflow: hidden
+}
+
+#events2019 .parallax .event-row4 .bg-cover {
+  height: 400px
+}
+
+#events2019 .parallax .event-row4 .bg-cover .bg-img {
+  height: 400px;
+  background-image: url(/img/2019_banner3.8ca8b9f.jpg)
+}
+
+#events2019 .parallax .event-row5 {
+  display: block
+}
+
+#events2019 .parallax .event-row5 .text-title {
+  text-align: center;
+  margin: 0 0 80px
+}
+
+#events2019 .parallax .event-row5 .icon-cover {
+  display: block;
+  position: relative;
+  margin: 0 0 40px;
+  overflow: hidden;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(.04, transparent), color-stop(.2, #000), color-stop(.8, #000), color-stop(.96, transparent))
+}
+
+#events2019 .parallax .event-row5 .icon-cover .icon-container {
+  display: flex;
+  text-align: center
+}
+
+#events2019 .parallax .event-row5 .icon-cover .icon-container span {
+  display: inline-block;
+  position: relative;
+  width: 100%
+}
+
+#events2019 .parallax .event-row5 .icon-cover .icon-container span.i5 {
+  z-index: 5
+}
+
+#events2019 .parallax .event-row5 .icon-cover .icon-container span .i6,
+#events2019 .parallax .event-row5 .icon-cover .icon-container span.i4 {
+  z-index: 4
+}
+
+#events2019 .parallax .event-row5 .icon-cover .icon-container span .i7,
+#events2019 .parallax .event-row5 .icon-cover .icon-container span.i3 {
+  z-index: 3
+}
+
+#events2019 .parallax .event-row5 .icon-cover .icon-container span .i8,
+#events2019 .parallax .event-row5 .icon-cover .icon-container span.i2 {
+  z-index: 2
+}
+
+#events2019 .parallax .event-row5 .icon-cover .icon-container span .i9,
+#events2019 .parallax .event-row5 .icon-cover .icon-container span.i1 {
+  z-index: 1
+}
+
+#events2019 .parallax .event-row5 .content {
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto 70px;
+  text-align: center
+}
+
+#events2019 .parallax .event-row5 .bg-cover {
+  height: 344px
+}
+
+#events2019 .parallax .event-row5 .bg-cover .bg-img {
+  height: 344px;
+  background-image: url(/img/2019_pic6.face88e.jpg)
+}
+
+#events2019 .parallax .event-row6 .row-cover {
+  padding: 88px 30px
+}
+
+#events2019 .parallax .event-row6 .row-cover .animation-container {
+  max-width: 1200px
+}
+
+#events2019 .parallax .event-row6 .row-cover .animation-container .left {
+  width: 480px
+}
+
+#events2019 .parallax .event-row6 .row-cover .animation-container .left .text-title {
+  margin: 0 0 40px
+}
+
+#events2019 .parallax .event-row6 .row-cover .animation-container .left .jackpot-game {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 0 0 40px
+}
+
+#events2019 .parallax .event-row6 .row-cover .animation-container .left .jackpot-game span {
+  display: block;
+  float: left
+}
+
+#events2019 .parallax .event-row6 .row-cover .animation-container .left .jackpot-game span.j1 {
+  margin: 0 24px 24px 0
+}
+
+#events2019 .parallax .event-row6 .row-cover .animation-container .left .jackpot-game span.j2 {
+  margin: 0 0 24px
+}
+
+#events2019 .parallax .event-row6 .row-cover .animation-container .left .jackpot-game span.j3 {
+  margin: 0 24px 0 0
+}
+
+#events2019 .parallax .event-row6 .row-cover .animation-container .left .row6-left-text1 {
+  display: block;
+  width: 375px
+}
+
+#events2019 .parallax .event-row6 .row-cover .animation-container .right .row6-right-img1 {
+  display: block;
+  width: 556px;
+  height: 635px
+}
+
+#events2019 .parallax .event-row7 {
+  display: block;
+  height: 840px
+}
+
+#events2019 .parallax .event-row7 .bg-cover {
+  height: 840px
+}
+
+#events2019 .parallax .event-row7 .bg-cover .bg-img {
+  height: 840px;
+  background-image: url(/img/2019_banner5.cd301a1.jpg)
+}
+
+#events2019 .parallax .event-row8 {
+  display: block
+}
+
+#events2019 .parallax .event-row8 .text-title {
+  margin: 0 0 78px
+}
+
+#events2019 .parallax .event-row8 .res-tournament-img1 {
+  display: none;
+  width: 100%;
+  height: 382px;
+  overflow: hidden;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: url(/img/2019_pic8.6cfb1f9.jpg)
+}
+
+#events2019 .parallax .event-row8 .res-tournament-img1 img,
+#events2019 .parallax .event-row8 .res-tournament-img3 {
+  display: none
+}
+
+#events2019 .parallax .event-row8 .res-tournament-img4 {
+  display: none;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-image: url(/img/2019_pic11.d63a986.jpg)
+}
+
+#events2019 .parallax .event-row8 .res-tournament-img4 img {
+  display: none
+}
+
+#events2019 .parallax .event-row8 .left {
+  width: 288px;
+  margin: 0 70px 0 0
+}
+
+#events2019 .parallax .event-row8 .left.left-2 {
+  margin: 0 70px 70px 0
+}
+
+#events2019 .parallax .event-row8 .left.left-3 {
+  width: 288px;
+  height: 1px
+}
+
+#events2019 .parallax .event-row8 .left .award-icon1 {
+  display: block;
+  width: 168px;
+  height: 168px;
+  margin: 0 0 40px
+}
+
+#events2019 .parallax .event-row8 .left .award-text1 {
+  display: block
+}
+
+#events2019 .parallax .event-row8 .left .award-icon2 {
+  display: block;
+  width: 168px;
+  height: 168px;
+  margin: 0 0 40px
+}
+
+#events2019 .parallax .event-row8 .left .award-text2 {
+  display: block
+}
+
+#events2019 .parallax .event-row8 .right {
+  float: left;
+  width: 575px
+}
+
+#events2019 .parallax .event-row8 .right .tournament-img1 {
+  display: block;
+  position: relative;
+  width: 1164px;
+  height: 448px;
+  margin: 0 0 70px
+}
+
+#events2019 .parallax .event-row8 .right .tournament-img1 div {
+  display: block;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  top: 0;
+  width: 1164px;
+  height: 100%;
+  background: #fff
+}
+
+#events2019 .parallax .event-row8 .right .tournament-img2 {
+  display: block;
+  position: relative;
+  width: 575px;
+  height: 368px;
+  margin: 0 0 88px
+}
+
+#events2019 .parallax .event-row8 .right .tournament-img2 div {
+  display: block;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  top: 0;
+  width: 575px;
+  height: 100%;
+  background: #fff
+}
+
+#events2019 .parallax .event-row8 .right .tournament-img3 {
+  display: block;
+  position: relative;
+  width: 575px;
+  height: 424px;
+  margin: 0 0 70px
+}
+
+#events2019 .parallax .event-row8 .right .tournament-img3 div {
+  display: block;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+  top: 0;
+  width: 575px;
+  height: 100%;
+  background: #fff
+}
+
+#events2019 .parallax .event-row8 .right .tournament-img4 {
+  display: block;
+  position: relative;
+  width: 1332px;
+  height: 400px
+}
+
+#events2019 .parallax .event-row8 .right .tournament-img4 div {
+  display: block;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  top: 0;
+  width: 1332px;
+  height: 100%;
+  background: #fff
+}
+
+#events2019 .parallax .event-row9 {
+  display: block;
+  height: 425px
+}
+
+#events2019 .parallax .event-row9 .row-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  padding: 0
+}
+
+#events2019 .parallax .event-row9 .row-cover .bg-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 425px
+}
+
+#events2019 .parallax .event-row9 .row-cover .bg-cover .bg-overlay {
+  display: block;
+  position: absolute;
+  width: 100%;
+  background: #000;
+  opacity: .5;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1
+}
+
+#events2019 .parallax .event-row9 .row-cover .bg-cover .bg-img {
+  height: 425px;
+  background-image: url(/img/2019_banner7.466c096.jpg)
+}
+
+#events2019 .parallax .event-row9 .row-cover .animation-container {
+  z-index: 1;
+  margin: 0
+}
+
+#events2019 .parallax .event-row9 .row-cover .animation-container .text-title {
+  text-align: center;
+  margin: 0 0 30px;
+  color: #fff
+}
+
+#events2019 .parallax .event-row9 .row-cover .animation-container .content {
+  max-width: 550px;
+  width: 100%;
+  margin: 0 auto 30px;
+  text-align: center;
+  color: #fff
+}
+
+#events2019 .parallax .event-row9 .row-cover .animation-container .button {
+  display: block;
+  width: 220px;
+  height: 50px;
+  background: #fff;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 48px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 2px;
+  letter-spacing: .5px;
+  color: #000
+}
+
+#events2019 .parallax .event-row9 .row-cover .animation-container .button:hover {
+  color: #ff1c4f
+}
+
+#events2019 .parallax .event-row10 {
+  display: block;
+  height: 500px
+}
+
+#events2019 .parallax .event-row10 .row-cover {
+  position: relative;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+#events2019 .parallax .event-row10 .row-cover .animation-container {
+  margin: 0
+}
+
+#events2019 .parallax .event-row10 .row-cover .animation-container .text-title {
+  text-align: center;
+  margin: 0 0 30px
+}
+
+#events2019 .parallax .event-row10 .row-cover .animation-container .content {
+  display: block;
+  width: 580px;
+  text-align: center;
+  margin: 0 auto 40px
+}
+
+#events2019 .parallax .event-row10 .row-cover .animation-container .button {
+  display: block;
+  width: fit-content;
+  min-width: 220px;
+  padding: 0 40px;
+  height: 50px;
+  background: #ff1c4f;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 48px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 2px;
+  letter-spacing: .5px;
+  color: #fff
+}
+
+#events2019 .parallax .event-row10 .row-cover .animation-container .button:hover {
+  color: #000
+}
+
+#events2019 .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  margin-left: 9px;
+  margin-right: 9px;
+  border: 2px solid #fff
+}
+
+#events2019 .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 14px;
+  height: 14px;
+  background: 0 0;
+  border: 1px solid #64b5f6
+}
+
+#events2019 .swiper-pagination-bullet:first-child {
+  margin-left: 0
+}
+
+#events2019 .swiper-pagination-bullet:last-child {
+  margin-right: 0
+}
+
+#events2019 .title {
+  font-size: 48px;
+  line-height: 60px;
+  color: #000
+}
+
+#events2019 .para {
+  font-size: 18px;
+  line-height: 36px;
+  color: #666
+}
+
+@media screen and (max-width: 1919px) {
+  #events2019 .parallax .cover .cover-div .nav {
+    padding: 90px 30px 0
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  #events2019 .parallax .cover .cover-div .full-bg .pg-container .ice {
+    right: -30px
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  #events2019 .row-cover {
+    padding: 88px 0
+  }
+
+  #events2019 .parallax .cover {
+    height: 100vh
+  }
+
+  #events2019 .parallax .cover .cover-div {
+    height: 100%
+  }
+
+  #events2019 .parallax .cover .cover-div .nav {
+    padding: 90px 30px 0
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg {
+    padding: 0
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .cover-title .year {
+    margin: 0 0 40px
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .cover-title .text-title {
+    margin: 0 0 30px
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .cover-title .desc {
+    max-width: 100%;
+    padding: 0 50px
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .pg-container .ice {
+    right: 0
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .pg-container .play-video-button {
+    right: 30px
+  }
+
+  #events2019 .parallax .event-row1 .animation-container {
+    max-width: 100%
+  }
+
+  #events2019 .parallax .event-row1 .animation-container .content .left {
+    margin: 0;
+    width: 50%;
+    padding: 0 35px 0 0;
+    box-sizing: border-box
+  }
+
+  #events2019 .parallax .event-row1 .animation-container .content .left .row1-left-img1 {
+    width: 100%;
+    height: auto
+  }
+
+  #events2019 .parallax .event-row1 .animation-container .content .right {
+    width: 50%;
+    float: right;
+    padding: 0 0 0 35px;
+    box-sizing: border-box
+  }
+
+  #events2019 .parallax .event-row1 .animation-container .content .right .row1-right-img1 {
+    width: 100%;
+    height: auto
+  }
+
+  #events2019 .parallax .event-row3 .animation-container {
+    max-width: 100%
+  }
+
+  #events2019 .parallax .event-row3 .animation-container .content .left {
+    margin: 0;
+    width: 50%;
+    padding: 0 35px 0 0;
+    box-sizing: border-box
+  }
+
+  #events2019 .parallax .event-row3 .animation-container .content .left .row3-left-text1 {
+    margin: 0 0 120px
+  }
+
+  #events2019 .parallax .event-row3 .animation-container .content .left .row3-left-img1 {
+    width: 100%;
+    height: auto
+  }
+
+  #events2019 .parallax .event-row3 .animation-container .content .right {
+    margin: 0;
+    width: 50%;
+    padding: 0 0 0 35px
+  }
+
+  #events2019 .parallax .event-row3 .animation-container .content .right .row3-right-img1 {
+    width: 100%;
+    height: auto
+  }
+
+  #events2019 .parallax .event-row5 .animation-container {
+    max-width: 100%
+  }
+
+  #events2019 .parallax .event-row5 .animation-container .text-title {
+    padding: 0 30px
+  }
+
+  #events2019 .parallax .event-row5 .animation-container .icon-cover {
+    height: 88px;
+    -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0, transparent), color-stop(.1, #000), color-stop(.9, #000), color-stop(1, transparent))
+  }
+
+  #events2019 .parallax .event-row5 .animation-container .icon-cover .icon-container {
+    width: calc(100% + 120px);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%)
+  }
+
+  #events2019 .parallax .event-row5 .animation-container .content {
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 30px
+  }
+
+  #events2019 .parallax .event-row6 .row-cover {
+    padding: 88px 30px
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container {
+    max-width: 100%
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .right {
+    width: calc(100% - 480px)
+  }
+
+  #events2019 .parallax .event-row8 .animation-container {
+    max-width: 100%
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .text-title {
+    padding: 0 30px
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .res-tournament-img1 {
+    display: block;
+    margin: 0 0 70px
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .res-tournament-img4 {
+    display: block
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .left {
+    width: 50%;
+    padding: 0 35px 0 30px;
+    box-sizing: border-box;
+    margin: 0
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .left .award-text1 {
+    margin: 0 0 70px
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .right {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 0 0 35px
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .right .tournament-img1 {
+    display: none
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .right .tournament-img2 {
+    width: 100%;
+    height: auto;
+    line-height: 0
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .right .tournament-img2 img {
+    width: 100% !important;
+    height: auto !important
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .right .tournament-img3 {
+    height: auto;
+    line-height: 0
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .right .tournament-img3 img {
+    width: 100% !important;
+    height: auto !important
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .right .tournament-img4 {
+    display: none
+  }
+}
+
+@media screen and (max-width: 991px) {
+  #events2019 .text-title {
+    line-height: 62px
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .cover-title {
+    padding: 0 30px;
+    margin: 0 0 40px
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .cover-title .text-title {
+    font-size: 70px;
+    line-height: 70px
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .cover-title .desc {
+    padding: 0
+  }
+
+  #events2019 .parallax .cover .cover-div .nav {
+    padding: 80px 30px 0
+  }
+
+  #events2019 .parallax .event-row1 .animation-container .content .left {
+    padding: 0 25px 0 0
+  }
+
+  #events2019 .parallax .event-row1 .animation-container .content .right {
+    padding: 0 0 0 25px
+  }
+
+  #events2019 .parallax .event-row1 .animation-container .content .right .row1-right-text1,
+  #events2019 .parallax .event-row1 .animation-container .content .right .row1-right-text2 {
+    width: 100%;
+    padding: 0 30px 0 0
+  }
+
+  #events2019 .parallax .event-row3 .animation-container .content .left {
+    padding: 0 25px 0 0
+  }
+
+  #events2019 .parallax .event-row3 .animation-container .content .left .row3-left-text1,
+  #events2019 .parallax .event-row3 .animation-container .content .left .row3-left-text2 {
+    width: 100%;
+    padding: 0 0 0 30px
+  }
+
+  #events2019 .parallax .event-row3 .animation-container .content .right {
+    padding: 0 0 0 25px
+  }
+
+  #events2019 .parallax .event-row5 .row-cover {
+    padding: 88px 0 0
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .icon-cover .icon-container span.i1,
+  #events2019 .parallax .event-row5 .row-cover .animation-container .icon-cover .icon-container span.i9 {
+    display: none
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .bg-cover {
+    overflow: unset;
+    position: relative
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .bg-cover .bg-img {
+    position: absolute;
+    width: 1200px;
+    top: 0;
+    left: calc(50% - 600px)
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .left {
+    width: 480px
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .left .row6-left-text1 {
+    width: 280px
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .right {
+    width: calc(100% - 500px)
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .right .row6-right-img1 {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin: 80px 0 0
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .right .row6-right-img1 img {
+    position: absolute;
+    top: 0;
+    right: -150px
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .left {
+    padding: 0 25px 0 30px
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .left .award-icon1 {
+    width: 130px;
+    height: 130px;
+    margin: 0 0 20px
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .left .award-icon1 img {
+    width: 100% !important;
+    height: auto !important
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .left .award-icon2 {
+    width: 130px;
+    height: 130px;
+    margin: 0 0 20px
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .left .award-icon2 img {
+    width: 100% !important;
+    height: auto !important
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .left .award-text2 {
+    margin: 0 0 70px
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .right {
+    padding: 0 0 0 25px
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .right .tournament-img3 {
+    width: 100%;
+    margin: 0 0 70px
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .right .tournament-img3 img {
+    width: 100% !important;
+    height: auto !important
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .right .tournament-img4 {
+    display: none
+  }
+
+  #events2019 .parallax .event-row9 {
+    height: auto
+  }
+
+  #events2019 .parallax .event-row9 .row-cover {
+    padding: 88px 30px
+  }
+
+  #events2019 .parallax .event-row9 .row-cover .bg-cover {
+    height: 100%
+  }
+
+  #events2019 .parallax .event-row9 .row-cover .bg-cover .bg-overlay {
+    opacity: .6
+  }
+
+  #events2019 .parallax .event-row9 .row-cover .bg-cover .bg-img {
+    height: 100%
+  }
+
+  #events2019 .parallax .event-row9 .row-cover .animation-container .content {
+    max-width: 100%
+  }
+
+  #events2019 .parallax .event-row10 {
+    height: auto
+  }
+
+  #events2019 .parallax .event-row10 .row-cover {
+    padding: 88px 30px
+  }
+
+  #events2019 .parallax .event-row10 .row-cover .animation-container .content {
+    width: 100%
+  }
+
+  #events2019 .gallery {
+    margin: 0 auto;
+    max-width: 100%
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #events2019 .text-title {
+    font-size: 42px;
+    line-height: 54px
+  }
+
+  #events2019 .text {
+    line-height: 30px
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .pg-container .cover-title .text-title {
+    font-size: 54px;
+    line-height: 54px
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .pg-container .cover-title .desc {
+    line-height: 30px
+  }
+
+  #events2019 .parallax .event-row1 .row-cover {
+    padding: 88px 30px
+  }
+
+  #events2019 .parallax .event-row1 .row-cover .animation-container .content .left {
+    width: 100%;
+    padding: 0
+  }
+
+  #events2019 .parallax .event-row1 .row-cover .animation-container .content .left .row1-left-img1 {
+    margin: 0 0 25px
+  }
+
+  #events2019 .parallax .event-row1 .row-cover .animation-container .content .right {
+    width: 100%;
+    padding: 0
+  }
+
+  #events2019 .parallax .event-row1 .row-cover .animation-container .content .right .row1-right-text1 {
+    padding: 0;
+    margin: 0 0 35px
+  }
+
+  #events2019 .parallax .event-row1 .row-cover .animation-container .content .right .row1-right-img1 {
+    margin: 0 0 25px
+  }
+
+  #events2019 .parallax .event-row1 .row-cover .animation-container .content .right .row1-right-text2 {
+    padding: 0
+  }
+
+  #events2019 .parallax .event-row2,
+  #events2019 .parallax .event-row2 .bg-cover,
+  #events2019 .parallax .event-row2 .bg-cover .bg-img {
+    height: 320px
+  }
+
+  #events2019 .parallax .event-row3 .row-cover {
+    padding: 88px 30px
+  }
+
+  #events2019 .parallax .event-row3 .row-cover .animation-container .content .left {
+    width: 100%;
+    padding: 0
+  }
+
+  #events2019 .parallax .event-row3 .row-cover .animation-container .content .left .res-left-img1 {
+    display: block;
+    margin: 0 0 25px
+  }
+
+  #events2019 .parallax .event-row3 .row-cover .animation-container .content .left .row3-left-img1 {
+    margin: 0 0 25px
+  }
+
+  #events2019 .parallax .event-row3 .row-cover .animation-container .content .left .row3-left-text1 {
+    padding: 0;
+    margin: 0 0 35px
+  }
+
+  #events2019 .parallax .event-row3 .row-cover .animation-container .content .left .row3-left-text2 {
+    padding: 0;
+    margin: 0 0 25px
+  }
+
+  #events2019 .parallax .event-row3 .row-cover .animation-container .content .right {
+    width: 100%;
+    padding: 0
+  }
+
+  #events2019 .parallax .event-row3 .row-cover .animation-container .content .right .row3-right-img1 {
+    display: none
+  }
+
+  #events2019 .parallax .event-row3 .row-cover .animation-container .content .right .row3-right-img2 {
+    width: 100%;
+    height: auto
+  }
+
+  #events2019 .parallax .event-row4,
+  #events2019 .parallax .event-row4 .bg-cover {
+    height: 320px
+  }
+
+  #events2019 .parallax .event-row4 .bg-cover .bg-img {
+    height: 320px;
+    background-position: 62% 50% !important
+  }
+
+  #events2019 .parallax .event-row5 .row-cover {
+    padding: 88px 30px
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .text-title {
+    padding: 0
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .icon-cover {
+    -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(0, transparent), color-stop(.2, #000), color-stop(.8, #000), color-stop(1, transparent))
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .icon-cover .icon-container {
+    width: 100%
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .icon-cover .icon-container span.i2,
+  #events2019 .parallax .event-row5 .row-cover .animation-container .icon-cover .icon-container span.i8 {
+    display: none
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .content {
+    padding: 0
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .bg-cover {
+    overflow: hidden;
+    height: 300px
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .bg-cover .bg-img {
+    width: 1000px;
+    height: 300px
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .left {
+    width: 100%
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .left .text-title {
+    text-align: center
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .left .jackpot-game {
+    width: 100%;
+    overflow: hidden;
+    height: auto
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .left .jackpot-game span {
+    display: block;
+    width: 25%;
+    margin: 0 !important;
+    text-align: center
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .left .row6-left-text1 {
+    width: 100%;
+    text-align: center
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .right {
+    width: 100%
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .right .row6-right-img1 {
+    box-sizing: border-box;
+    text-align: center;
+    margin: 50px 0 0
+  }
+
+  #events2019 .parallax .event-row6 .row-cover .animation-container .right .row6-right-img1 img {
+    width: 90% !important;
+    height: auto !important;
+    position: relative;
+    right: auto;
+    top: auto
+  }
+
+  #events2019 .parallax .event-row7,
+  #events2019 .parallax .event-row7 .bg-cover,
+  #events2019 .parallax .event-row7 .bg-cover .bg-img {
+    height: 460px
+  }
+
+  #events2019 .parallax .event-row8 .row-cover {
+    padding: 88px 30px
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .text-title {
+    text-align: center;
+    padding: 0
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .res-tournament-img1 {
+    height: auto;
+    margin: 0 0 40px
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .res-tournament-img1 img {
+    display: block
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .res-tournament-img3 {
+    display: block;
+    margin: 0 0 25px
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .res-tournament-img4 {
+    height: auto
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .res-tournament-img4 img {
+    display: block
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .left {
+    width: 100%;
+    padding: 0
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .left .award-icon1,
+  #events2019 .parallax .event-row8 .row-cover .animation-container .left .award-icon2 {
+    margin: 0 auto 25px
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .left .award-text1 {
+    text-align: center;
+    margin: 0 0 25px
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .left .award-text2 {
+    text-align: center;
+    margin: 0 0 40px
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .right {
+    width: 100%;
+    padding: 0
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .right .tournament-img2 {
+    height: auto
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .right .tournament-img2 img {
+    width: 100% !important;
+    height: auto !important
+  }
+
+  #events2019 .parallax .event-row8 .row-cover .animation-container .right .tournament-img3 {
+    display: none
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #events2019 .parallax .text {
+    font-size: 16px;
+    line-height: 28px
+  }
+
+  #events2019 .parallax .text-title {
+    font-size: 32px;
+    line-height: 42px
+  }
+
+  #events2019 .parallax .row-cover {
+    padding: 50px 30px !important
+  }
+
+  #events2019 .parallax .cover {
+    height: auto
+  }
+
+  #events2019 .parallax .cover .cover-div .nav {
+    padding: 80px 6% 0
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg {
+    padding: 0
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .pg-container {
+    padding: 140px 30px
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .pg-container .cover-title {
+    padding: 0
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .pg-container .cover-title .year {
+    width: 248px;
+    height: auto;
+    margin: 0 0 20px
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .pg-container .cover-title .year img {
+    width: 100% !important;
+    height: auto !important
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .pg-container .cover-title .text-title {
+    margin: 0 0 20px
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .pg-container .cover-title .desc {
+    font-size: 16px;
+    line-height: 28px
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .pg-container .mouse {
+    display: none
+  }
+
+  #events2019 .parallax .cover .cover-div .full-bg .pg-container .play-video-button {
+    right: calc(50% - 70px)
+  }
+
+  #events2019 .parallax .event-row1 .animation-container .text-title {
+    margin: 0 0 50px
+  }
+
+  #events2019 .parallax .event-row2,
+  #events2019 .parallax .event-row2 .bg-cover,
+  #events2019 .parallax .event-row2 .bg-cover .bg-img {
+    height: 240px
+  }
+
+  #events2019 .parallax .event-row3 .animation-container .text-title {
+    margin: 0 0 50px
+  }
+
+  #events2019 .parallax .event-row4,
+  #events2019 .parallax .event-row4 .bg-cover,
+  #events2019 .parallax .event-row4 .bg-cover .bg-img {
+    height: 240px
+  }
+
+  #events2019 .parallax .event-row5 .row-cover {
+    padding: 50px 0 !important
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .text-title {
+    margin: 0 0 50px;
+    padding: 0 30px
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .icon-cover {
+    margin: 0 0 35px;
+    height: 60px
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .icon-cover .icon-container {
+    width: calc(100% + 60px)
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .icon-cover .icon-container span img {
+    width: 60px;
+    height: 60px
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .content {
+    padding: 0 30px;
+    margin: 0 0 35px
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .bg-cover {
+    padding: 0 30px;
+    height: auto
+  }
+
+  #events2019 .parallax .event-row5 .row-cover .animation-container .bg-cover .bg-img {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    left: auto;
+    top: auto
+  }
+
+  #events2019 .parallax .event-row6 .animation-container .left .jackpot-game span img {
+    width: 66px !important;
+    height: 66px !important
+  }
+
+  #events2019 .parallax .event-row8 .animation-container .text-title {
+    margin: 0 0 50px
+  }
+
+  #events2019 .parallax .event-row10>.row-cover>.animation-container>.button {
+    padding: 0 20px
+  }
+}

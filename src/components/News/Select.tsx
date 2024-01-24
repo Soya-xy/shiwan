@@ -70,7 +70,7 @@ const NewsSelection = () => {
           />
         </a>
         <div id="dropdownSelectionDate">
-          <a className="cover" onClick={() => setShow(!show)} />
+          <a className="bg-cover" onClick={() => setShow(!show)} />
           <div className="box" ref={box}>
             <a
               className={clsx('all cursor-pointer', show && 'b-view-ani')}

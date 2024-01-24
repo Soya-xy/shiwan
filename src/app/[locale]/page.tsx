@@ -1,7 +1,7 @@
 'use client'
 
 import { useQuery } from '@tanstack/react-query'
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 
 import { useIsMobile } from '~/atoms'
 import { Games, TopNav } from '~/components/Game/Games'
@@ -9,6 +9,7 @@ import { Search } from '~/components/Game/Search'
 // import { motion } from 'framer-motion'
 import { SwiperTop } from '~/components/Game/Swiper'
 import { GameTabbar } from '~/components/Game/Tabbar'
+import { TimeLine } from '~/components/Game/TimeLine'
 
 export default function Home() {
   const { isPending, data } = useQuery({
@@ -18,6 +19,8 @@ export default function Home() {
   })
 
   const isMobile = useIsMobile()
+  const [active, setActive] = useState('games')
+  console.log('🚀 ~ Home ~ active:', active)
   return (
     <>
       {isPending && (
@@ -38,15 +41,16 @@ export default function Home() {
       {!isPending && data && (
         <Fragment>
           <SwiperTop banner_list={data?.banner || []} />
-          <div className="md:!hidden">
-            <TopNav />
-          </div>
 
-          <div className="bg-blur bg-[#1F1F1D] pt-[50px] md:pt-10">
+          <div className="bg-blur !bg-[#f7f7f7] md:pb-10">
             <div className="container  mx-auto 2xl:max-w-[1300px]">
-              <Games data={data.game} />
+              <div className="!bg-[#f7f7f7] pb-[30px] pt-[50px]">
+                <TopNav active={active} onChange={(e: any) => setActive(e)} />
+              </div>
+              {active === 'games' ? <Games data={data.game} /> : <TimeLine />}
             </div>
           </div>
+
           <div className="game-mainpage">
             {isMobile && <GameTabbar />}
             <Search />

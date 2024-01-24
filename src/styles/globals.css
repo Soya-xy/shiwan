@@ -19,6 +19,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "din_condensedbold";
+  src: url("/fonts/din_condensed_bold-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
   font-family: "BoxedLight";
@@ -135,4 +141,14 @@ html {
   position: fixed;
   inset: 0;
   animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pg-container {
+  padding-top: 130px
+}
+
+@media screen and (max-width: 991px) {
+  .pg-container {
+    padding-top: 80px
+  }
 }

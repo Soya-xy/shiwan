@@ -1,28 +1,54 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { useMotionValueEvent, useScroll } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { tabbarShow } from '~/components/Game/Games'
+import { jotaiStore } from '~/lib/store'
 
 import icon_1 from '/public/images/BMM@2x.108098f.png'
 import icon_2 from '/public/images/GA@2x.c6a334d.png'
 import logo from '/public/images/logo.png'
 
 const Footer = () => {
+  const ref = useRef(null)
+  const { scrollYProgress, scrollY } = useScroll({
+    target: ref,
+    offset: ['start end', 'end end'],
+  })
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    const value = scrollYProgress.get()
+    if (latest > 150) {
+      if (value > 0) jotaiStore.set(tabbarShow, false)
+      else jotaiStore.set(tabbarShow, true)
+    } else {
+      jotaiStore.set(tabbarShow, false)
+    }
+  })
   return (
-    <footer className="relative bg-[#fff]">
+    <footer className="relative z-10 bg-[#fff] pt-5" ref={ref}>
       <div className="footer__top-wrap">
-        <div className="container mx-auto">
+        <div className="container mx-auto 2xl:max-w-[1300px]">
           <div className="flex w-full flex-col md:flex-row">
             <div className="">
               <div className="footer-widget">
-                <div className="footer-logo logo text-center md:text-start max-md:my-4 max-md:flex max-md:justify-center">
+                <div className="footer-logo logo flex justify-center text-center md:justify-start  md:text-start max-md:my-4 max-md:flex">
                   <Link href="#">
                     <Image src={logo} alt="Logo" width={177} height={40} />
                   </Link>
                 </div>
                 <div className="footer-text">
                   <p className="desc my-4 text-[#bcbcbc] max-md:px-4">
-                    PG电子(Pocket Games Soft
-                    )全球首屈一指的电子游戏供货商，首位跨足线下线上电子游戏开发。拥有亚洲最大娱乐城esball独家授权，首开全球先锋：「整合线下到线上电子游戏」多款游戏屡屡创下市场傲人佳绩，吸引各方玩家一指上瘾，豪掷千金，已成为全球首屈一指的电子游戏品牌！
+                    PG Pocket Games Soft is the world`s leading video game
+                    supplier and the first cross-line video game development.
+                    With the exclusive license of esball, Asia`s largest
+                    entertainment city, it is the first global pioneer:
+                    “Integration of offline to online video games” Many games
+                    have repeatedly achieved great achievements in the market,
+                    attracting players from all walks of life to be addicted and
+                    spending a lot of money. It has become the world`s leading
+                    video game brand!
                   </p>
                   <div className="footer-social my-2 flex justify-start  max-md:my-4 max-md:flex max-md:justify-center">
                     <Link href="#">
@@ -38,24 +64,24 @@ const Footer = () => {
             <div className="flex w-full justify-end gap-3 max-md:justify-center">
               <div className="ml-[1%]">
                 <div className="footer-widget widget_nav_menu">
-                  <h4 className=" qr-title text-center text-[#54595F] after:!content-[unset]  md:after:!content-['']">
+                  <h4 className=" qr-title !after:content-[unset] !md:after:content-[''] text-center  text-[#54595F]">
                     TELEGRAM
                   </h4>
                   <img
                     className="m-[0_auto] w-40"
-                    src="https://gstatic.clewm.net/caoliao-resource/231117/a44fa42f_4b16ec36_1666157560.png"
+                    src="/images/qr_kefu.jpg"
                     alt=""
                   />
                 </div>
               </div>
               <div className="">
                 <div className="footer-widget widget_nav_menu ">
-                  <h4 className="qr-title text-center text-[#54595F] after:!content-[unset]  md:after:!content-['']">
+                  <h4 className="qr-title !after:content-[unset] !md:after:content-[''] text-center  text-[#54595F]">
                     SKYPE
                   </h4>
                   <img
                     className="m-[0_auto] w-40"
-                    src="https://gstatic.clewm.net/caoliao-resource/231117/a44fa42f_4b16ec36_1666157560.png"
+                    src="/images/qr_group.jpg"
                     alt=""
                   />
                 </div>
@@ -64,7 +90,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto border-t  border-t-[#C0C0C0] pt-[20px]">
+      <div className="container mx-auto mt-[20px]  border-t border-t-[#C0C0C0] pt-[20px]">
         <div className="container mx-auto">
           <div className="flex justify-center">
             <p className="text-[12px] text-[#C0C0C0]">

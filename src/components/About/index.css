@@ -1,0 +1,248 @@
+#company .pg-container {
+  padding-top: 50px
+}
+
+#company .pg-row {
+  position: relative
+}
+
+#company .pg-row.in-view {
+  transform: none;
+  visibility: visible;
+  opacity: 1
+}
+
+#company .pg-row .img-bg {
+  position: relative;
+  width: 100%;
+  height: 313px;
+  overflow: hidden;
+  text-align: center;
+  background-size: cover;
+  background-position: 50%
+}
+
+#company .pg-row .img-bg img {
+  width: auto;
+  height: 100%;
+  left: 100%;
+  margin-left: -200%;
+  position: relative;
+  display: none
+}
+
+#company .pg-row .company-img-desc {
+  background-color: #fff;
+  padding: 73px 79px 74px;
+  margin-top: 20px;
+  margin-bottom: 20px
+}
+
+#company .pg-row .company-img-desc .cimg {
+  width: 100%;
+  height: auto;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap
+}
+
+#company .pg-row .company-img-desc .cimg>div {
+  float: left;
+  width: auto;
+  height: auto;
+  margin-right: 40px;
+  margin-bottom: 20px
+}
+
+#company .pg-row .company-img-desc .cimg>div.eighteen {
+  width: 57px;
+  height: 57px
+}
+
+#company .pg-row .company-img-desc .cimg>div.bmm {
+  width: 168px;
+  height: 29px
+}
+
+#company .pg-row .company-img-desc .cimg>div.nmi {
+  width: 72px;
+  height: 57px
+}
+
+#company .pg-row .company-img-desc .cimg>div.gibraltar {
+  width: 44px;
+  height: 57px
+}
+
+#company .pg-row .company-img-desc .cimg>div img {
+  height: 100%
+}
+
+#company .pg-row .company-img-desc .desc {
+  font-size: 16px;
+  color: #666;
+  letter-spacing: 0;
+  line-height: 36px;
+  margin-bottom: 0
+}
+
+#company .pg-row .company-img-desc .copyright {
+  font-size: 16px;
+  color: #969696;
+  letter-spacing: 0;
+  line-height: 36px
+}
+
+#company .pg-row .company-desc {
+  background-color: #fff;
+  padding: 73px 79px 74px
+}
+
+#company .pg-row .company-desc .title {
+  font-size: 48px;
+  color: #000;
+  letter-spacing: -1px;
+  line-height: 48px;
+  margin-bottom: 48px
+}
+
+#company .pg-row .company-desc .subtitle {
+  font-size: 24px;
+  color: #666;
+  letter-spacing: 0;
+  line-height: 28px;
+  margin-bottom: 20px
+}
+
+#company .pg-row .company-desc .desc {
+  font-size: 18px;
+  color: #666;
+  letter-spacing: 0;
+  line-height: 36px
+}
+
+#company .pg-row .top {
+  padding: 36px 79px 37px
+}
+
+#company .pg-row .top.first {
+  padding: 74px 79px 37px
+}
+
+#company .pg-row .top.last {
+  padding-bottom: 74px;
+  margin-bottom: 40px
+}
+
+#company .pg-row.end {
+  padding-bottom: 40px
+}
+
+@media screen and (max-width: 991px) {
+  #company .pg-container {
+      padding-top:30px
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #company .pg-row .company-desc,#company .pg-row .company-img-desc {
+      padding:39px 30px 60px
+  }
+
+  #company .pg-row .top {
+      padding: 37px 30px
+  }
+
+  #company .pg-row .top.first {
+      padding: 74px 30px 37px
+  }
+
+  #company .pg-row .top.last {
+      padding-bottom: 74px;
+      margin-bottom: 40px
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #company .pg-row .img-bg {
+      height:157px
+  }
+
+  #company .pg-row .company-desc {
+      padding: 36px 20px 40px
+  }
+
+  #company .pg-row .company-desc .title {
+      font-size: 34px;
+      line-height: 36px;
+      letter-spacing: 0;
+      margin-bottom: 20px
+  }
+
+  #company .pg-row .company-desc .subtitle {
+      font-size: 20px;
+      letter-spacing: 0;
+      line-height: 30px
+  }
+
+  #company .pg-row .company-desc .desc {
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 28px
+  }
+
+  #company .pg-row .company-img-desc {
+      padding: 36px 20px 40px;
+      overflow: hidden
+  }
+
+  #company .pg-row .company-img-desc .desc {
+      margin-bottom: 0
+  }
+
+  #company .pg-row .company-img-desc .copyright,#company .pg-row .company-img-desc .desc {
+      font-size: 14px;
+      letter-spacing: 0;
+      line-height: 26px
+  }
+
+  #company .pg-row .company-img-desc .cimg {
+      margin-bottom: 10px
+  }
+
+  #company .pg-row .company-img-desc .cimg>div {
+      margin-right: 0
+  }
+
+  #company .pg-row .company-img-desc .cimg>div.cimg1,#company .pg-row .company-img-desc .cimg>div.cimg2,#company .pg-row .company-img-desc .cimg>div.cimg3,#company .pg-row .company-img-desc .cimg>div.cimg4 {
+      width: 25%;
+      max-width: 90px;
+      height: 30px;
+      padding-right: 0
+  }
+
+  #company .pg-row .company-img-desc .cimg>div img {
+      width: 100%;
+      height: 100%;
+      object-fit: scale-down;
+      object-position: 0 50%
+  }
+
+  #company .pg-row .top {
+      padding: 20px
+  }
+
+  #company .pg-row .top.first {
+      padding: 40px 20px 37px
+  }
+
+  #company .pg-row .top.last {
+      padding-bottom: 40px;
+      margin-bottom: 20px
+  }
+
+  #company .pg-row.end {
+      margin-bottom: 40px
+  }
+}

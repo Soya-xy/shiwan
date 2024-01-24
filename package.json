@@ -52,6 +52,7 @@
     "dayjs": "1.11.10",
     "foxact": "0.2.30",
     "framer-motion": "10.17.9",
+    "gsap": "^3.12.5",
     "idb-keyval": "6.2.1",
     "immer": "10.0.3",
     "jojoo": "0.1.3",

@@ -13,7 +13,7 @@ const FormDisabledDemo = () => {
   const [spinning, setSpinning] = useState<boolean>(false)
 
   function onFinish() {
-    const data = form.getFieldsValue(true)
+    const data = JSON.parse(JSON.stringify(form.getFieldsValue(true)))
     if (data.imgUrl[0]?.response) {
       data.imgUrl = data.imgUrl[0].response.url
     } else {
@@ -51,7 +51,7 @@ const FormDisabledDemo = () => {
   const { id } = useParams()
 
   const { isPending, isSuccess, data } = useQuery({
-    queryKey: ['bannerEditRepoData'],
+    queryKey: ['noCache'],
     queryFn: () =>
       fetch(`/admin/banner/api?id=${id}`).then((res) => res.json()),
     staleTime: 1,
@@ -67,7 +67,7 @@ const FormDisabledDemo = () => {
         return
       }
 
-      data.icon = [
+      const icon = [
         {
           uid: '-1',
           name: 'image.png',
@@ -75,7 +75,8 @@ const FormDisabledDemo = () => {
           url: data.icon,
         },
       ]
-      data.imgUrl = [
+      data.icon = icon
+      const imgUrl = [
         {
           uid: '-1',
           name: 'image.png',
@@ -83,9 +84,12 @@ const FormDisabledDemo = () => {
           url: data.imgUrl,
         },
       ]
+      data.imgUrl = imgUrl
       setIsOver(true)
 
-      form.setFieldsValue(data)
+      setTimeout(() => {
+        form.setFieldsValue(data)
+      }, 1000)
     }
   }, [isSuccess])
 

@@ -10,7 +10,7 @@ const Home: React.FC = () => {
 
   const router = useRouter()
   const { data, refetch } = useQuery({
-    queryKey: ['bannerData'],
+    queryKey: ['noCache'],
     queryFn: () => fetch('/admin/banner/api').then((res) => res.json()),
     staleTime: 1,
   })

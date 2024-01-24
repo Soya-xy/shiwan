@@ -1,8 +1,15 @@
-import { useState } from 'react'
-import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
+'use client'
+
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
 import { jotaiStore } from '~/lib/store'
 
+import './tabbar.css'
+
+import { useAtomValue } from 'jotai'
+
+import { tabbarShow } from './Games'
 import { searchShow } from './Search'
 
 export const GameTabbar = () => {
@@ -11,12 +18,11 @@ export const GameTabbar = () => {
     begin: { y: -10 },
     end: { y: 100 },
   }
-  const { scrollY } = useScroll()
+  const tabSHow = useAtomValue(tabbarShow)
 
-  useMotionValueEvent(scrollY, 'change', (latest) => {
-    if (latest > 100) setClicked(true)
-    else setClicked(false)
-  })
+  useEffect(() => {
+    setClicked(tabSHow)
+  }, [tabSHow])
   return (
     <>
       <motion.div

@@ -2,15 +2,7 @@
   margin-bottom: 40px
 }
 
-#news .pg-container {
-  padding-top: 130px
-}
 
-@media screen and (max-width: 991px) {
-  #news .pg-container {
-    padding-top: 80px
-  }
-}
 
 @media only screen and (max-width: 767px) {
   #news {
@@ -294,7 +286,6 @@
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 0
 }
 
 #newsselection .pg-container {
@@ -445,12 +436,6 @@
   height: 100%;
   background-color: rgba(0, 0, 0, .1);
   z-index: 11
-}
-
-.langula,
-.top-navigator.nav-empty>.main-navi .menu-right .menu div a:hover,
-.top-navigator.nav-empty>.main-navi .menu-right .menu div.active a {
-  color: #000 !important;
 }
 
 

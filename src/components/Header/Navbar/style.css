@@ -40,37 +40,16 @@
   display: none !important
 }
 
-.top-navigator.nav-empty>.main-navi .menu-right .menu div.active a {
-  color: #fff !important
-}
+
 
 .top-navigator.nav-empty>.main-navi .menu-right .menu div.active a:before {
   height: 3px !important
 }
 
-.top-navigator.nav-empty>.main-navi .menu-right .menu div a {
-  color: hsla(0, 0%, 100%, .5) !important
-}
 
-.top-navigator.nav-empty>.main-navi .menu-right .menu div a:hover {
-  color: #fff !important
-}
 
 .top-navigator.nav-empty>.main-navi .menu-right .menu div a:hover:before {
   height: 3px !important
-}
-
-.top-navigator.nav-empty>.main-navi .menu-right .menu div .dark_a {
-  color: rgba(0, 0, 0, .5) !important;
-}
-
-.top-navigator.nav-empty>.main-navi .menu-right .menu div .dark_a:before {
-
-  background: #000 !important
-}
-
-.top-navigator.nav-empty>.main-navi .menu-right .menu div a:before {
-  background: #fff !important
 }
 
 .top-navigator.nav-empty>.mob-nav {
@@ -94,8 +73,11 @@
   display: block !important
 }
 
-.top-navigator.nav-empty>.mob-nav .mob-toggle .toggle-cover span {
+.top-navigator.nav-empty>.mob-nav .mob-toggle .light span {
   background: #fff !important
+}
+.top-navigator.nav-empty>.mob-nav .mob-toggle .darkSpan  span {
+  background: #000 !important
 }
 
 .top-navigator.nav-empty>.mobscroll-nav.scrolled {
@@ -421,9 +403,6 @@
   margin: 0 40px 0 0
 }
 
-.top-navigator>.main-navi .menu-right .menu div.active a {
-  color: #000
-}
 
 .top-navigator>.main-navi .menu-right .menu div.active a:before {
   height: 3px !important

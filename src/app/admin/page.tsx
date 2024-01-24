@@ -9,7 +9,7 @@ const Home: React.FC = () => {
   const [messageApi, contextHolder] = message.useMessage()
   const router = useRouter()
   const { data, refetch } = useQuery({
-    queryKey: ['adminData'],
+    queryKey: ['noCache'],
     queryFn: () => fetch('/admin/games/api').then((res) => res.json()),
     staleTime: 1,
   })

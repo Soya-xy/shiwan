@@ -13,6 +13,11 @@ const Game = db.define('Game', {
     allowNull: true,
     comment: '游戏介绍',
   },
+  link: {
+    type: DataTypes.STRING,
+    allowNull: true,
+    comment: '游戏链接',
+  },
   imgUrl: {
     type: DataTypes.STRING,
     allowNull: false,

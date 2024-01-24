@@ -130,6 +130,9 @@ const FormDisabledDemo = () => {
             <Checkbox.Group options={locales} />
           </Form.Item>
         </Form.Item>
+        <Form.Item label="游戏链接" name="link">
+          <Input />
+        </Form.Item>
         <Form.Item label="是否热门" name="isNew">
           <Switch />
         </Form.Item>

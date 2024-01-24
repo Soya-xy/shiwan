@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion'
 
+import { useRouter } from '~/i18n'
+
 const NewsList = () => {
+  const router = useRouter()
   return (
     <div id="newslist">
       <div className="media-list">
@@ -45,9 +48,9 @@ const NewsList = () => {
           <dl>Just a moment, please.</dl>
         </div>
         <ul id="news-timeline">
-          {Array.from({ length: 120 }).map((v: any) => (
+          {Array.from({ length: 12 }).map((_v: any, k: number) => (
             <motion.li
-              key={v}
+              key={k}
               initial={{
                 y: 100,
                 opacity: 0,
@@ -64,7 +67,12 @@ const NewsList = () => {
               className=" in-view"
             >
               <span className="line" />
-              <article className="news">
+              <article
+                className="news cursor-pointer"
+                onClick={() => {
+                  router.push('/news/detail/123')
+                }}
+              >
                 {/* Additional content for the news article can be added here */}
                 <a
                   title="AWAKEN THE SEALED DRAGON QUEEN IN“DRAGON HATCH 2”!"
@@ -97,7 +105,7 @@ const NewsList = () => {
           ))}
         </ul>
         <a className="loadmore">
-          <div className="flex-col !d-center">
+          <div className="flex flex-col !d-center">
             <div>Load More</div>
             <img
               src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NC40NiAxNS4wMSI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOiM5NTk1OTU7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT7otYTmupAgNDM8L3RpdGxlPjxnIGlkPSLlm77lsYJfMiIgZGF0YS1uYW1lPSLlm77lsYIgMiI+PGcgaWQ9IuWbvuWxgl8xLTIiIGRhdGEtbmFtZT0i5Zu+5bGCIDEiPjxwb2x5Z29uIGNsYXNzPSJjbHMtMSIgcG9pbnRzPSIyNy40OSAxNS4wMSAwIDAuOTIgMC40NiAwLjAzIDI3LjQ5IDEzLjg4IDU0IDAgNTQuNDYgMC44OSAyNy40OSAxNS4wMSIvPjwvZz48L2c+PC9zdmc+"

@@ -58,7 +58,6 @@ export const languageDayjs: any = {
   ru: 'ru',
 }
 export function Menu({ dark = false }: { dark: boolean }) {
-  console.log('🚀 ~ Menu ~ dark:', dark)
   const containerRef = useRef(null)
   const [isOpen] = useState(false)
   const { play } = useAudioPlayer('/music/click.wav')

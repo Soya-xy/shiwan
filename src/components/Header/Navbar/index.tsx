@@ -15,8 +15,9 @@ import { SlideMenu } from './SlideMenu'
 
 export const menuList = [
   { name: 'HOME', url: '/' },
-  { name: 'GAMES', url: '/game' },
   { name: 'NEWS', url: '/news' },
+  { name: 'ABOUT', url: '/about' },
+  { name: 'EVENT', url: '/event' },
 ]
 
 export const Navbar = () => {
@@ -33,6 +34,8 @@ export const Navbar = () => {
         } else {
           setIsDark(false)
         }
+      } else {
+        setIsDark(true)
       }
     })
   }, [path])
@@ -54,7 +57,7 @@ export const Navbar = () => {
   return (
     <div className="top-navigator nav-empty">
       <div
-        className={clsx(isActived ? ' active' : '', 'main-navi')}
+        className={clsx(isActived && !isDark ? ' active' : '', 'main-navi')}
         style={{
           background: isDark
             ? '#ffff'
@@ -77,12 +80,28 @@ export const Navbar = () => {
               return (
                 <div
                   key={k}
-                  className={active === k ? 'active' : ''}
+                  className={active == k ? 'active' : ''}
                   onClick={() => {
                     router.replace(v.url)
                   }}
                 >
-                  <a className={isDark ? 'dark_a' : ''}>{v.name}</a>
+                  <a
+                    className={`${isDark ? 'dark_a' : ''}  ${
+                      !isDark ? 'hover:!text-white' : 'hover:!text-black'
+                    }`}
+                    style={{
+                      color:
+                        active == k
+                          ? isDark
+                            ? '#000'
+                            : '#fff'
+                          : !isDark
+                            ? '#ffffff80'
+                            : '#56565680',
+                    }}
+                  >
+                    {v.name}
+                  </a>
                 </div>
               )
             })}
@@ -104,7 +123,9 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className={clsx(isActived ? ' active ' : '', 'scroll-navi')}>
+      <div
+        className={clsx(isActived && !isDark ? ' active ' : '', 'scroll-navi')}
+      >
         <Micro
           hidden={isActived || isMobile}
           list={menuList}
@@ -124,7 +145,11 @@ export const Navbar = () => {
 
       {/* 移动端 上面的 */}
       <div
-        className={clsx(isActived && !isMobile ? 'scrolled' : '', 'mob-nav')}
+        className={clsx(
+          isActived && isMobile ? 'scrolled' : '',
+          'mob-nav',
+          !isDark ? ' !bg-transparent' : '!bg-white',
+        )}
         style={{ background: isDark ? 'white !important' : '' }}
       >
         {!isDark && <div className="mob-overlay" />}
@@ -142,7 +167,7 @@ export const Navbar = () => {
           className="mob-toggle"
           onClick={() => setShowMobMenu(!showMobMenu)}
         >
-          <div className="toggle-cover">
+          <div className={`toggle-cover ${isDark ? 'darkSpan' : 'light'}`}>
             <span />
             <span />
             <span />
@@ -154,7 +179,7 @@ export const Navbar = () => {
       {/* 移动端 滚动的 */}
       <div
         className={clsx(
-          isActived && !isMobile ? 'scrolled' : '',
+          isActived && isMobile ? 'scrolled' : '',
           'mobscroll-nav',
         )}
       >
@@ -182,7 +207,7 @@ export const Navbar = () => {
       {/* 移动端菜单 */}
       <div
         className={clsx(
-          isActived ? 'scrolled' : '',
+          isActived && !isDark ? 'scrolled' : '',
           showMobMenu ? 'active' : '',
           'nav-slide',
         )}
@@ -208,21 +233,31 @@ export const Navbar = () => {
         <div className={`slide-col ${setDown ? 'up' : 'down'}`}>
           <div className="col-menu">
             <div>
-              <a href="/en/" className="">
+              <a href="/" className="">
                 HOME
               </a>
             </div>
-            <div>
+            {/* <div>
               <a href="/en/games/home" className="">
                 GAMES
               </a>
-            </div>
+            </div> */}
             <div>
-              <a href="/en/news/" className="">
+              <a href="/news/" className="">
                 NEWS
               </a>
             </div>
             <div>
+              <a href="/about/" className="">
+                ABOUT
+              </a>
+            </div>
+            <div>
+              <a href="/event/" className="">
+                EVENT
+              </a>
+            </div>
+            {/* <div>
               <a href="/en/math/" className="">
                 MATH
               </a>
@@ -242,7 +277,7 @@ export const Navbar = () => {
                 PARTNERS
               </a>
             </div>
-            <div className="sub">GET IN TOUCH</div>
+            <div className="sub">GET IN TOUCH</div> */}
           </div>
           <div className={`col-scroll ${setDown ? 'active' : ''}`}>
             <div

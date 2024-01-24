@@ -27,7 +27,7 @@ const FormDisabledDemo = () => {
   const [spinning, setSpinning] = useState<boolean>(false)
 
   function onFinish() {
-    const data = form.getFieldsValue(true)
+    const data = JSON.parse(JSON.stringify(form.getFieldsValue(true)))
     if (data.imgUrl[0]?.response) {
       data.imgUrl = data.imgUrl[0].response.url
     } else {
@@ -65,7 +65,7 @@ const FormDisabledDemo = () => {
   const { id } = useParams()
 
   const { isPending, isSuccess, data } = useQuery({
-    queryKey: ['editRepoData'],
+    queryKey: ['noCache'],
     queryFn: () => fetch(`/admin/games/api?id=${id}`).then((res) => res.json()),
     staleTime: 1,
   })
@@ -80,9 +80,8 @@ const FormDisabledDemo = () => {
         })
         return
       }
-      console.log('🚀 ~ useEffect ~ data:', data)
 
-      data.icon = [
+      const icon = [
         {
           uid: '-1',
           name: 'image.png',
@@ -90,7 +89,8 @@ const FormDisabledDemo = () => {
           url: data.icon,
         },
       ]
-      data.imgUrl = [
+      data.icon = icon
+      const imgUrl = [
         {
           uid: '-1',
           name: 'image.png',
@@ -98,8 +98,11 @@ const FormDisabledDemo = () => {
           url: data.imgUrl,
         },
       ]
+      data.imgUrl = imgUrl
       setIsOver(true)
-      form.setFieldsValue(data)
+      setTimeout(() => {
+        form.setFieldsValue(data)
+      }, 1000)
     }
   }, [isSuccess])
 
@@ -213,6 +216,9 @@ const FormDisabledDemo = () => {
           </Form.Item>
           <Form.Item label="是否热门" name="isNew">
             <Switch />
+          </Form.Item>
+          <Form.Item label="游戏链接" name="link">
+            <Input />
           </Form.Item>
           <Form.Item label="是否是新游戏" name="isHot">
             <Switch />

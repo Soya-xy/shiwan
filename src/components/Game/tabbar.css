@@ -1,0 +1,119 @@
+
+.game-mainpage>.game-bottom-bar {
+  display: flex;
+  position: fixed;
+  width: 500px;
+  bottom: -100px;
+  left: calc(50% - 250px);
+  background: #fff;
+  z-index: 101;
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .2);
+  border-radius: 8px;
+  transition: all .5s ease
+}
+
+.game-mainpage>.game-bottom-bar.active,
+.game-mainpage>.game-bottom-bar.bactive {
+  bottom: 25px !important
+}
+
+.game-mainpage>.game-bottom-bar>.menubox {
+  position: relative;
+  float: left;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  opacity: .5
+}
+
+.game-mainpage>.game-bottom-bar>.menubox.active {
+  opacity: 1 !important
+}
+
+.game-mainpage>.game-bottom-bar>.menubox>span {
+  display: block;
+  position: absolute;
+  height: 24px;
+  width: 1px;
+  left: 0;
+  top: calc(50% - 12px);
+  background: rgba(0, 0, 0, .1)
+}
+
+.game-mainpage>.game-bottom-bar>.menubox>div {
+  font-size: 16px;
+  color: #000;
+  opacity: .8;
+  padding: 17px 0
+}
+
+.game-mainpage>.game-bottom-bar>.menubox>div>.s_icon {
+  display: block;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  font-weight: 700
+}
+
+.game-mainpage>.game-bottom-bar>.menubox.active>div {
+  opacity: .8
+}
+
+.game-mainpage>.game-bottom-bar>.menubox:hover>div {
+  opacity: .8;
+  cursor: pointer
+}
+
+
+@media screen and (max-width: 575px) {
+  .game-mainpage>.game-bottom-bar {
+    width: 350px;
+    left: calc(50% - 175px)
+  }
+
+  .game-mainpage>.game-bottom-bar>.menubox>div>.s_icon {
+    height: 18px
+  }
+
+  .game-mainpage>.game-bottom-bar>.menubox>div>.s_icon img {
+    height: 100%
+  }
+
+  .game-mainpage>.main-lister>.lister-cover>.lister-scroll .game-nav>.lister-sidemenu>.menu-cta {
+    display: block
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .game-mainpage>.game-bottom-bar {
+    width: 300px;
+    left: calc(50% - 150px)
+  }
+
+  .game-mainpage>.main-lister>.lister-cover>.lister-scroll .top-nav>.top-nav-holder>.menubox>div>div {
+    padding: 0
+  }
+}
+
+@keyframes rotateAnime {
+  0% {
+    transform: rotate(0)
+  }
+
+  to {
+    transform: rotate(1turn)
+  }
+}
+
+@-webkit-keyframes rotateAnime {
+  0% {
+    transform: rotate(0)
+  }
+
+  to {
+    transform: rotate(1turn)
+  }
+}

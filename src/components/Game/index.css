@@ -1469,125 +1469,6 @@
 }
 
 
-.game-mainpage>.game-bottom-bar {
-  display: flex;
-  position: fixed;
-  width: 500px;
-  bottom: -100px;
-  left: calc(50% - 250px);
-  background: #fff;
-  z-index: 101;
-  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .2);
-  border-radius: 8px;
-  transition: all .5s ease
-}
-
-.game-mainpage>.game-bottom-bar.active,
-.game-mainpage>.game-bottom-bar.bactive {
-  bottom: 25px !important
-}
-
-.game-mainpage>.game-bottom-bar>.menubox {
-  position: relative;
-  float: left;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-grow: 1;
-  opacity: .5
-}
-
-.game-mainpage>.game-bottom-bar>.menubox.active {
-  opacity: 1 !important
-}
-
-.game-mainpage>.game-bottom-bar>.menubox>span {
-  display: block;
-  position: absolute;
-  height: 24px;
-  width: 1px;
-  left: 0;
-  top: calc(50% - 12px);
-  background: rgba(0, 0, 0, .1)
-}
-
-.game-mainpage>.game-bottom-bar>.menubox>div {
-  font-size: 16px;
-  color: #000;
-  opacity: .8;
-  padding: 17px 0
-}
-
-.game-mainpage>.game-bottom-bar>.menubox>div>.s_icon {
-  display: block;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  height: 20px;
-  font-weight: 700
-}
-
-.game-mainpage>.game-bottom-bar>.menubox.active>div {
-  opacity: .8
-}
-
-.game-mainpage>.game-bottom-bar>.menubox:hover>div {
-  opacity: .8;
-  cursor: pointer
-}
-
-
-@media screen and (max-width: 575px) {
-  .game-mainpage>.game-bottom-bar {
-    width: 350px;
-    left: calc(50% - 175px)
-  }
-
-  .game-mainpage>.game-bottom-bar>.menubox>div>.s_icon {
-    height: 18px
-  }
-
-  .game-mainpage>.game-bottom-bar>.menubox>div>.s_icon img {
-    height: 100%
-  }
-
-  .game-mainpage>.main-lister>.lister-cover>.lister-scroll .game-nav>.lister-sidemenu>.menu-cta {
-    display: block
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .game-mainpage>.game-bottom-bar {
-    width: 300px;
-    left: calc(50% - 150px)
-  }
-
-  .game-mainpage>.main-lister>.lister-cover>.lister-scroll .top-nav>.top-nav-holder>.menubox>div>div {
-    padding: 0
-  }
-}
-
-@keyframes rotateAnime {
-  0% {
-    transform: rotate(0)
-  }
-
-  to {
-    transform: rotate(1turn)
-  }
-}
-
-@-webkit-keyframes rotateAnime {
-  0% {
-    transform: rotate(0)
-  }
-
-  to {
-    transform: rotate(1turn)
-  }
-}
-
 .game-search {
   display: block;
   position: fixed;
@@ -1793,7 +1674,7 @@
   z-index: 1
 }
 
- .load-loop {
+.load-loop {
   display: block;
   position: absolute;
   width: 200px;
@@ -2067,5 +1948,785 @@
 
   to {
     transform: rotate(1turn)
+  }
+}
+
+.clear-row {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  float: none
+}
+
+.game-timeline,
+.game-timeline>.comingsoon {
+  position: relative;
+  width: 100%
+}
+
+.game-timeline>.comingsoon {
+  border-radius: 20px 20px 0 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  overflow: hidden;
+  margin: 0 0 20px
+}
+
+.game-timeline>.comingsoon>.comingsoon-bg,
+.game-timeline>.comingsoon>.comingsoon-mobile-bg {
+  width: 100%
+}
+
+.game-timeline>.comingsoon>.comingsoon-bg>img,
+.game-timeline>.comingsoon>.comingsoon-mobile-bg>img {
+  display: block;
+  width: 100%
+}
+
+.game-timeline>.comingsoon>.comingsoon-mobile-bg {
+  display: none
+}
+
+.game-timeline>.comingsoon>.comingsoon-text {
+  position: absolute;
+  z-index: 1;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center
+}
+
+.game-timeline>.comingsoon>.comingsoon-text>h1 {
+  display: block;
+  color: #000;
+  font-size: 54px;
+  letter-spacing: 0;
+  line-height: 54px;
+  margin: 0 0 20px
+}
+
+.game-timeline>.comingsoon>.comingsoon-text>span {
+  color: #000;
+  opacity: .5;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 24px
+}
+
+.game-timeline>.comingsoon>.comingsoon-text>.mb {
+  display: none
+}
+
+.game-timeline>.timeline-cover {
+  position: relative;
+  width: 100%
+}
+
+.game-timeline>.timeline-cover>.timeline-col {
+  display: block;
+  text-decoration: none
+}
+
+.game-timeline>.timeline-cover>.timeline-col:first-child {
+  mask-image: linear-gradient(180deg, transparent, #000 20%);
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 20%)
+}
+
+.game-timeline>.timeline-cover>.timeline-col.last {
+  mask-image: linear-gradient(180deg, #000 80%, transparent);
+  -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent)
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div {
+  width: 100%;
+  height: 300px;
+  padding: 40px 80px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: all .3s
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.timeline-line {
+  position: absolute;
+  width: 20px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  z-index: 1
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.v-line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, .1)
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line {
+  width: calc(100% + 1px);
+  height: 1px;
+  margin: 0 0 24px 8px;
+  transition: all .3s
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line>div {
+  position: relative;
+  width: 100%;
+  height: 100%
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line>div>span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .1);
+  transition: all .3s
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(7) {
+  height: 2px
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(7)>div>span {
+  width: 200%;
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  overflow: hidden
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(7)>div>span>span {
+  display: block;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background-position: 4% 4%;
+  background-repeat: no-repeat;
+  filter: blur(10px)
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(13),
+.game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(14),
+.game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(15),
+.game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(16) {
+  display: none
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.col-cover {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: all .3s
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeleft {
+  width: calc(50% - 30px);
+  height: 100%;
+  display: flex;
+  justify-content: flex-end
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeleft>.t-img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all .3s
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeleft>.t-img {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: calc(50% - 60px);
+  height: 100%;
+  transition: all .3s
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary {
+  width: 100%;
+  overflow: hidden
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-date {
+  font-size: 70px;
+  line-height: 70px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 0;
+  margin: 0 0 12px;
+  font-family: din_condensedbold, BoxedLight, PingFang SC, Microsoft YaHei light, WenQuanYi Micro Hei, sans-serif
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-detail {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #000
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-detail>.s-year {
+  width: 62px;
+  margin-right: 10px;
+  opacity: .4;
+  font-size: 40px;
+  line-height: 40px;
+  letter-spacing: 0;
+  font-family: din_condensedbold, BoxedLight, PingFang SC, Microsoft YaHei light, WenQuanYi Micro Hei, sans-serif
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-detail>.s-line {
+  width: 2px;
+  height: 40px;
+  padding: 6px 0;
+  margin-right: 14px
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-detail>.s-line>span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .4)
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-detail>.s-desc {
+  width: calc(100% - 90px);
+  height: 40px;
+  padding-top: 2px;
+  overflow: hidden;
+  opacity: .5;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-description {
+  display: none;
+  width: 100%;
+  height: 62px;
+  color: #000;
+  opacity: .6;
+  font-size: 14px;
+  line-height: 20px;
+  overflow: hidden
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div:hover {
+  height: 340px;
+  padding: 40px 50px
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div:hover>.timeline-line>.t-line {
+  margin-bottom: 27px
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div:hover>.timeline-line>.t-line:nth-child(5)>div>span {
+  width: calc(100% + 5px);
+  height: 2px
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div:hover>.timeline-line>.t-line:nth-child(6)>div>span {
+  width: calc(100% + 15px);
+  height: 4px
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div:hover>.timeline-line>.t-line:nth-child(7)>div>span {
+  width: calc(100% + 40px);
+  height: 6px
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div:hover>.timeline-line>.t-line:nth-child(8)>div>span {
+  width: calc(100% + 15px);
+  height: 4px
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div:hover>.timeline-line>.t-line:nth-child(9)>div>span {
+  width: calc(100% + 5px);
+  height: 2px
+}
+
+.game-timeline>.timeline-cover>.timeline-col>div:hover>.col-cover>.timeright {
+  padding-left: 30px
+}
+
+.game-timeline>.bottombar {
+  width: 100%;
+  text-align: center;
+  padding: 0 20px
+}
+
+.game-timeline>.bottombar>.barcover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  line-height: 0;
+  border: 1px solid rgba(0, 0, 0, .02);
+  border-radius: 14px;
+  background: rgba(0, 0, 0, .02);
+  cursor: pointer;
+  transition: all .3s ease
+}
+
+.game-timeline>.bottombar>.barcover:hover {
+  background: rgba(0, 0, 0, .05);
+  border: 1px solid rgba(0, 0, 0, .04)
+}
+
+.game-timeline>.bottombar>.barcover>.loadmore {
+  overflow: hidden;
+  display: flex
+}
+
+.game-timeline>.bottombar>.barcover>.loadmore>.loadtext {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  height: 48px;
+  color: #000;
+  margin: 0 10px 0 0
+}
+
+.game-timeline>.bottombar>.barcover>.loadmore>.loadarrow {
+  position: relative;
+  width: 12px;
+  height: 48px
+}
+
+.game-timeline>.bottombar>.barcover>.loadmore>.loadarrow>span {
+  display: block;
+  position: absolute;
+  background: #000
+}
+
+.game-timeline>.bottombar>.barcover>.loadmore>.loadarrow>span:first-child {
+  width: 12px;
+  height: 2px;
+  top: calc(50% - 1px);
+  left: 0
+}
+
+.game-timeline>.bottombar>.barcover>.loadmore>.loadarrow>span:nth-child(2) {
+  width: 2px;
+  height: 12px;
+  top: calc(50% - 6px);
+  left: calc(50% - 1px)
+}
+
+.game-timeline>.bottombar>.barcover>.backtop {
+  display: inline-block;
+  box-sizing: border-box;
+  overflow: hidden
+}
+
+.game-timeline>.bottombar>.barcover>.backtop>.backtext {
+  display: block;
+  float: left;
+  font-size: 16px;
+  line-height: 48px;
+  height: 48px;
+  font-weight: 700;
+  color: #000;
+  margin: 0 8px 0 0
+}
+
+.game-timeline>.bottombar>.barcover>.backtop>.backarrow {
+  display: block;
+  float: left;
+  position: relative;
+  width: 16px;
+  height: 48px
+}
+
+.game-timeline>.bottombar>.barcover>.backtop>.backarrow span {
+  display: block;
+  position: absolute;
+  background: #000
+}
+
+.game-timeline>.bottombar>.barcover>.backtop>.backarrow span:first-child {
+  width: 10px;
+  height: 2px;
+  top: 20px;
+  left: 0;
+  transform: rotate(-40deg)
+}
+
+.game-timeline>.bottombar>.barcover>.backtop>.backarrow span:nth-child(2) {
+  height: 2px;
+  width: 10px;
+  top: 20px;
+  left: 6px;
+  transform: rotate(40deg)
+}
+
+.game-timeline>.bottombar>.barcover>.backtop>.backarrow span:nth-child(3) {
+  height: 14px;
+  width: 2px;
+  top: calc(50% - 7px);
+  left: calc(50% - 1px)
+}
+
+.two-col .game-timeline>.comingsoon>.comingsoon-bg {
+  opacity: .9
+}
+
+.two-col .game-timeline>.comingsoon>.comingsoon-text {
+  top: 0
+}
+
+.two-col .game-timeline>.comingsoon>.comingsoon-text>h1 {
+  font-size: 44px;
+  line-height: 44px
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div {
+  height: 216px;
+  padding: 28px 50px
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line {
+  width: 14px;
+  left: calc(50% - 1px)
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line {
+  margin: 0 0 17px
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(13),
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(14),
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(15),
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(16) {
+  display: none
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line>div>span {
+  background: rgba(0, 0, 0, .1)
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright {
+  width: calc(50% - 40px)
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-date {
+  font-size: 54px;
+  line-height: 54px;
+  margin: 0
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-detail>.s-year {
+  width: auto;
+  font-size: 24px;
+  line-height: 24px;
+  padding: 0 0 5px 10px;
+  margin: 0
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-detail>.s-desc,
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-detail>.s-line {
+  display: none
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-description {
+  display: block;
+  margin-top: 8px
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div:hover {
+  padding: 28px 25px
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div:hover>.timeline-line>.t-line:nth-child(7)>div>span {
+  width: calc(100% + 35px);
+  height: 2px
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div:hover>.timeline-line>.t-line:nth-child(6)>div>span,
+.two-col .game-timeline>.timeline-cover>.timeline-col>div:hover>.timeline-line>.t-line:nth-child(8)>div>span {
+  width: calc(100% + 15px);
+  height: 1px
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div:hover>.timeline-line>.t-line:nth-child(5)>div>span,
+.two-col .game-timeline>.timeline-cover>.timeline-col>div:hover>.timeline-line>.t-line:nth-child(9)>div>span {
+  width: calc(100% + 5px);
+  height: 1px
+}
+
+.two-col .game-timeline>.timeline-cover>.timeline-col>div:hover>.col-cover>.timeright {
+  padding: 0 0 0 25px
+}
+
+.one-col .game-timeline>.comingsoon>.comingsoon-bg {
+  display: none
+}
+
+.one-col .game-timeline>.comingsoon>.comingsoon-mobile-bg {
+  display: block
+}
+
+.one-col .game-timeline>.comingsoon>.comingsoon-text {
+  width: 400px;
+  top: 60px;
+  left: unset;
+  right: 60px;
+  transform: translateX(0)
+}
+
+.one-col .game-timeline>.comingsoon>.comingsoon-text>h1 {
+  font-size: 32px;
+  line-height: 32px;
+  margin: 0 0 10px;
+  text-align: right
+}
+
+.one-col .game-timeline>.comingsoon>.comingsoon-text>span {
+  font-size: 12px;
+  line-height: 20px;
+  text-align: right
+}
+
+.one-col .game-timeline>.comingsoon>.comingsoon-text>.dt {
+  display: none
+}
+
+.one-col .game-timeline>.comingsoon>.comingsoon-text>.mb {
+  display: block
+}
+
+.one-col .game-timeline>.timeline-cover>.timeline-col>div {
+  height: 216px;
+  padding: 28px 50px;
+  pointer-events: none
+}
+
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line {
+  width: 14px;
+  left: calc(50% - 1px)
+}
+
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line {
+  margin: 0 0 17px;
+  transform: scaleY(.5)
+}
+
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(13),
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(14),
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(15),
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(16) {
+  display: none
+}
+
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line>div>span {
+  background: rgba(0, 0, 0, .1)
+}
+
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.v-line {
+  transform: scaleX(.5)
+}
+
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright {
+  width: calc(50% - 40px)
+}
+
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary {
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap
+}
+
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-date {
+  font-size: 54px;
+  line-height: 54px;
+  margin: 0
+}
+
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-detail>.s-year {
+  width: auto;
+  font-size: 24px;
+  line-height: 24px;
+  padding: 0 0 5px 10px;
+  margin: 0
+}
+
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-detail>.s-desc,
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-detail>.s-line {
+  display: none
+}
+
+.one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-description {
+  display: block;
+  margin-top: 8px
+}
+
+@media screen and (max-width: 767px) {
+  .game-timeline>.comingsoon {
+    border-radius: 0
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .one-col .game-timeline>.comingsoon>.comingsoon-text {
+    width: 280px;
+    right: 20px
+  }
+
+  .one-col .game-timeline>.comingsoon>.comingsoon-text>h1 {
+    font-size: 30px;
+    line-height: 30px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div {
+    height: 157px;
+    padding: 0 8%
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line {
+    width: 10px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line {
+    margin: 0 0 12px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(13),
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(14),
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(15),
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line:nth-child(16) {
+    display: none
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover {
+    height: 110px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeleft {
+    width: 42%
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeleft>.t-img {
+    max-width: 180px;
+    border-radius: 6px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright {
+    width: calc(50% - 8% - 10px)
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary {
+    max-width: 180px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-date {
+    font-size: 40px;
+    line-height: 40px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-detail>.s-year {
+    font-size: 21px;
+    line-height: 21px;
+    padding: 0 0 4px 6px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-description {
+    margin-top: 4px
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .one-col .game-timeline>.comingsoon>.comingsoon-text {
+    width: 200px;
+    top: 20px
+  }
+
+  .one-col .game-timeline>.comingsoon>.comingsoon-text>h1 {
+    font-size: 28px;
+    line-height: 28px
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .one-col .game-timeline>.comingsoon>.comingsoon-text {
+    top: 0
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .one-col .game-timeline>.comingsoon>.comingsoon-text {
+    width: 160px
+  }
+
+  .one-col .game-timeline>.comingsoon>.comingsoon-text>h1 {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0 0 4px
+  }
+
+  .one-col .game-timeline>.comingsoon>.comingsoon-text>span {
+    font-size: 11px;
+    line-height: 18px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div {
+    height: 120px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.timeline-line>.t-line {
+    width: 8px;
+    margin: 0 0 9px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover {
+    height: 86px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeleft {
+    width: 45%
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright {
+    width: calc(50% - 5% - 10px)
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-date {
+    font-size: 36px;
+    line-height: 36px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-detail>.s-year {
+    font-size: 17px;
+    line-height: 17px
+  }
+
+  .one-col .game-timeline>.timeline-cover>.timeline-col>div>.col-cover>.timeright>.t-summary>.summary-description {
+    font-size: 10px;
+    line-height: 15px;
+    height: 45px
   }
 }
