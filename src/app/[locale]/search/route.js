@@ -14,9 +14,9 @@ export async function GET(e, { params: { locale } }) {
       },
     })
     game.map((v) => {
-      v.name = JSON.parse(v.name)[locale]
-      v.content = JSON.parse(v.content)[locale]
-      v.volatility = JSON.parse(v.volatility)[locale]
+      v.name = v.name[locale]
+      v.content = v.content[locale]
+      v.volatility = v.volatility[locale]
       return v
     })
     return Response.json(game)

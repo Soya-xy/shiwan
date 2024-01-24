@@ -1,6 +1,6 @@
 import { isClientSide, isDev } from '~/lib/env'
 
-export const IMG_URL = isDev ? 'http://pgg.xiaoyio.com/' : ''
+export const IMG_URL = isDev ? 'http://pg.xiaoyio.com/' : ''
 
 export const API_URL: string = (() => {
   if (isDev) return process.env.NEXT_PUBLIC_API_URL

@@ -6,9 +6,9 @@ export const dynamic = 'force-dynamic' // defaults to auto
 export async function GET(_e, { params: { locale } }) {
   const game = await Game.findAll()
   game.map((v) => {
-    v.name = JSON.parse(v.name)[locale]
-    v.content = JSON.parse(v.content)[locale]
-    v.volatility = JSON.parse(v.volatility)[locale]
+    v.name = v.name[locale]
+    v.content = v.content[locale]
+    v.volatility = v.volatility[locale]
     return v
   })
 

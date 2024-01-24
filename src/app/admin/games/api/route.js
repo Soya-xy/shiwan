@@ -5,19 +5,18 @@ export const dynamic = 'force-dynamic' // defaults to auto
 export async function GET(request) {
   const searchParams = request.nextUrl.searchParams
   const id = searchParams.get('id')
-  console.log('🚀 ~ GET ~ id:', id)
   let game
   if (id) {
     game = await Game.findByPk(id)
-    game.name = JSON.parse(game.name)['zh']
-    game.content = JSON.parse(game.content)['zh']
-    game.volatility = JSON.parse(game.volatility)['zh']
+    game.name = game.name['zh']
+    game.content = game.content['zh']
+    game.volatility = game.volatility['zh']
   } else {
     game = await Game.findAll()
     game.map((v) => {
-      v.name = JSON.parse(v.name)['zh']
-      v.content = JSON.parse(v.content)['zh']
-      v.volatility = JSON.parse(v.volatility)['zh']
+      v.name = v.name['zh']
+      v.content = v.content['zh']
+      v.volatility = v.volatility['zh']
       return v
     })
   }
