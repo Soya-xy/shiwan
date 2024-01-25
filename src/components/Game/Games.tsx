@@ -103,8 +103,9 @@ const GamePlay = ({ url, onClose }: any) => {
           <Dialog.Content className="fixed top-0 z-[120] flex h-[100vh] w-[100vw] flex-col items-center justify-center overflow-hidden">
             <div
               className={clsx(
-                'relative h-[85vh] w-[80vw]',
+                'relative h-[87vh] w-[82vw]',
                 isMobile && '!wh-full',
+                'bg-[#F7F7F7] p-3 ',
               )}
             >
               <iframe src={url} className="wh-full" />
@@ -114,7 +115,7 @@ const GamePlay = ({ url, onClose }: any) => {
                   'absolute z-[130] text-2xl text-white',
                   isMobile
                     ? 'right-0 top-0 h-[40px] w-[40px] rounded-[10px] bg-[#0000008c] d-center'
-                    : ' right-[-16px] top-[-16px]',
+                    : ' right-[-20px] top-[-16px]',
                 )}
                 onClick={() => onClose && onClose()}
               >
@@ -515,7 +516,7 @@ export const TopNav = ({ active, onChange }: any) => {
         <div className="top-nav-holder w-full">
           <div
             className={clsx(active === 'games' && 'active', 'menubox')}
-            onClick={() => onChange && onChange('game')}
+            onClick={() => onChange && onChange('games')}
           >
             <div>
               <div className="s_icon">

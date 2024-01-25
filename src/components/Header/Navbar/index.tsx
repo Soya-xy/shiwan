@@ -64,7 +64,12 @@ export const Navbar = () => {
             : 'linear-gradient(180deg, rgba(0, 0, 0, .5) 10%, transparent)',
         }}
       >
-        <div className="logo-left">
+        <div
+          className="logo-left cursor-pointer"
+          onClick={() => {
+            router.replace('/')
+          }}
+        >
           <img
             src="/images/logo_white.png"
             className={isDark ? '!hidden' : 'white'}

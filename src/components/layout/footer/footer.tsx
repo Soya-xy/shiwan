@@ -93,7 +93,7 @@ const Footer = () => {
       <div className="container mx-auto mt-[20px]  border-t border-t-[#C0C0C0] pt-[20px]">
         <div className="container mx-auto">
           <div className="flex justify-center">
-            <p className="text-[12px] text-[#C0C0C0]">
+            <p className="pb-5 text-[12px] text-[#C0C0C0]">
               © 版权所有 2022 Pocket Games Soft 电子 亚洲区官方邮箱 :{' '}
               <span className="text-[#3366ff]">pgsoftgaming@163.com</span>
             </p>

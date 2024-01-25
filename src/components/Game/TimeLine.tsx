@@ -13,8 +13,8 @@ export const TimeLine = () => {
         !sm ? 'one-col' : md ? '' : 'two-col',
       )}
     >
-      <div className="game-timeline">
-        <div className="comingsoon">
+      <div className="game-timeline mt-10 md:mt-0">
+        <div className="comingsoon ">
           <div className="comingsoon-bg">
             <img
               src="/images/99afcba3-2a68-4a50-86ad-4c4f791b0850.png"
@@ -41,7 +41,7 @@ export const TimeLine = () => {
         </div>
         <div className="timeline-cover">
           {[...Array(15)].map((_, index) => (
-            <a href="/en/games/149/" className="timeline-col" key={index}>
+            <div className="timeline-col" key={index}>
               <div>
                 <div className="timeline-line">
                   {[...Array(15)].map((_, index) => (
@@ -99,7 +99,7 @@ export const TimeLine = () => {
                   </div>
                 </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
         <div className="bottombar">
