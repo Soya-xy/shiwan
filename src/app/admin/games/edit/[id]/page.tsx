@@ -65,9 +65,10 @@ const FormDisabledDemo = () => {
   const { id } = useParams()
 
   const { isPending, isSuccess, data } = useQuery({
-    queryKey: ['noCache'],
+    queryKey: ['noCache', id],
     queryFn: () => fetch(`/admin/games/api?id=${id}`).then((res) => res.json()),
-    staleTime: 1,
+    gcTime: 0,
+    staleTime: 0,
   })
   const [isOver, setIsOver] = useState(false)
 
