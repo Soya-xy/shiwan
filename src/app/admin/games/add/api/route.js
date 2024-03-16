@@ -4,14 +4,14 @@ import Game from '~/modal/game'
 
 export async function POST(request) {
   const res = await request.json()
-  if (res?.name_lg?.length > 0 || locales?.length > 0) {
+  if (res?.name_lg?.length > 0 && locales?.length > 0) {
     const name = {}
     for (const item of res?.name_lg || locales) {
       name[item] = await translate(res.name, item)
     }
     res.name = name
   }
-  if (res?.volatility_lg?.length > 0 || locales?.length > 0) {
+  if (res?.volatility_lg?.length > 0 && locales?.length > 0) {
     const name = {}
     for (const item of res?.volatility_lg || locales) {
       name[item] = await translate(res.volatility, item)
@@ -19,7 +19,7 @@ export async function POST(request) {
     res.volatility = name
   }
 
-  if (res?.content_lg?.length > 0 || locales?.length > 0) {
+  if (res?.content_lg?.length > 0 && locales?.length > 0) {
     const name = {}
     for (const item of res?.content_lg || locales) {
       name[item] = await translate(res.content, item)

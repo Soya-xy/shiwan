@@ -1,6 +1,5 @@
 'use client'
 
-import { useQuery } from '@tanstack/react-query'
 import { useEffect, useState } from 'react'
 import {
   Button,
@@ -64,13 +63,21 @@ const FormDisabledDemo = () => {
 
   const { id } = useParams()
 
-  const { isPending, isSuccess, data } = useQuery({
-    queryKey: ['noCache', id],
-    queryFn: () => fetch(`/admin/games/api?id=${id}`).then((res) => res.json()),
-    gcTime: 0,
-    staleTime: 0,
-  })
+  const [isPending, setIsPending] = useState<boolean>(true)
+  const [isSuccess, setIsSuccess] = useState<boolean>(false)
+  const [data, setData] = useState<any>([])
   const [isOver, setIsOver] = useState(false)
+
+  if (!isSuccess) {
+    fetch(`/admin/games/api?id=${id}`)
+      .then((res) => res.json())
+      .then((res: any) => {
+        console.log('🚀 ~ fetch ~ res:', res)
+        setIsPending(false)
+        setData(res)
+        setIsSuccess(true)
+      })
+  }
 
   useEffect(() => {
     if (isSuccess) {

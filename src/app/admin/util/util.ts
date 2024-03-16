@@ -19,6 +19,8 @@ export function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 export async function translate(raw: string, type: string) {
+  if (!raw || !type) return
+
   const client = new TmtClient(clientConfig)
   const params = {
     SourceText: raw,

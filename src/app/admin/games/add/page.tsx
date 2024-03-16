@@ -142,6 +142,7 @@ const FormDisabledDemo = () => {
         <Form.Item
           label="游戏图片"
           name="imgUrl"
+          valuePropName="fileList"
           normalize={(e) => e?.file?.response?.url}
           rules={[{ required: true, message: '请上传游戏图片' }]}
         >
@@ -160,6 +161,7 @@ const FormDisabledDemo = () => {
         <Form.Item
           label="游戏图标"
           name="icon"
+          valuePropName="fileList"
           normalize={(e) => e?.file?.response?.url}
           rules={[{ required: true, message: '请上传图标' }]}
         >

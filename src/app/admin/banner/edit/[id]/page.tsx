@@ -1,6 +1,5 @@
 'use client'
 
-import { useQuery } from '@tanstack/react-query'
 import { useEffect, useState } from 'react'
 import { Button, ColorPicker, Form, Input, message, Spin, Upload } from 'antd'
 import { useParams, useRouter } from 'next/navigation'
@@ -50,13 +49,22 @@ const FormDisabledDemo = () => {
 
   const { id } = useParams()
 
-  const { isPending, isSuccess, data } = useQuery({
-    queryKey: ['noCache'],
-    queryFn: () =>
-      fetch(`/admin/banner/api?id=${id}`).then((res) => res.json()),
-    staleTime: 1,
-  })
+  const [isPending, setIsPending] = useState<boolean>(true)
+  const [isSuccess, setIsSuccess] = useState<boolean>(false)
+  const [data, setData] = useState<any>([])
   const [isOver, setIsOver] = useState(false)
+
+  if (!isSuccess) {
+    fetch(`/admin/banner/api?id=${id}`)
+      .then((res) => res.json())
+      .then((res: any) => {
+        console.log('🚀 ~ fetch ~ res:', res)
+        setIsPending(false)
+        setData(res)
+        setIsSuccess(true)
+      })
+  }
+
   useEffect(() => {
     if (isSuccess) {
       if (!data) {
